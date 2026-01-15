@@ -1,4 +1,4 @@
-# es-fine-tuning-paper
+# finetune-llms-with-es
 This repo contains a fork of the source code for the paper "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning" (https://arxiv.org/abs/2509.24372). Evolution strategies (ES) is used to directly optimize billions of parameters of large language models (LLMs).
 
 I am using this repo to investigate the impact of ES-based fine-tuning on various architectures. The original paper suggests that GRPO doesn't work very well on smaller models when fine-tuning on Countdown. I'd like to see if these results hold for SSMs like Liquid's LFM-2.5. Updates will be posted periodically here.
