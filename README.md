@@ -1,25 +1,7 @@
 # es-fine-tuning-paper
-This repo contains the source code for the paper "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning" (https://arxiv.org/abs/2509.24372). Evolution strategies (ES) is used to directly optimize billions of parameters of large language models (LLMs).
+This repo contains a fork of the source code for the paper "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning" (https://arxiv.org/abs/2509.24372). Evolution strategies (ES) is used to directly optimize billions of parameters of large language models (LLMs).
 
-Feel free to join the ES fine-tuning forum in [Discussions](https://github.com/VsonicV/es-fine-tuning-paper/discussions).
-
-### News
-10/27/2025: :fire::fire::fire: An accelerated version with **10X+ speed-up** in running time is added to the repo!  See [here](https://github.com/VsonicV/es-fine-tuning-paper?tab=readme-ov-file#accelerated-version-10x-speed-up). :rocket::rocket::rocket:
-
-Note: we are still actively adding more experimental codes into this repo. We expect breaking change to the accelerated implementations.
-
-## Setup
-Create a virtual environment with python version >= 3.10 and activate it
-```bash
-python -m venv es
-source es/bin/activate
-```
-
-From the root of the repository run following command to install all the relevant python packages
-```bash
-pip install -r requirement.txt
-```
-
+I am using this repo to investigate the impact of ES-based fine-tuning on various architectures. The original paper suggests that GRPO doesn't work very well on smaller models when fine-tuning on Countdown. I'd like to see if these results hold for SSMs like Liquid's LFM-2.5. Updates will be posted periodically here.
 
 ## Usage
 For running the main ES code on conciseness fine-tuning
@@ -91,7 +73,7 @@ python es_fine-tuning_countdown_accl.py \
 
 On preliminary 4xH100 setting, accelerated version achieves ~10 times speed-up with similar convergence rate.
 
-## Citation
+## Citation for the Original ArXiv Paper
 
 If you find this work helpful in your research, please cite:
 
