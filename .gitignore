@@ -1,0 +1,5 @@
+**.pth
+**.safetensors
+**.DS_Store
+/es
+/es-ft-experiment
