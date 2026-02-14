@@ -27,7 +27,7 @@ class WorkerExtension:
             gen = torch.Generator(device=p.device)
             gen.manual_seed(int(seed))
             noise = torch.randn(p.shape, dtype=p.dtype, device=p.device, generator=gen)
-            p.data.add_(sign * scale * noise)
+            p.data.add_(noise, alpha=(sign * scale))
             del noise
         if torch.cuda.is_available():
             torch.cuda.synchronize()
@@ -39,7 +39,7 @@ class WorkerExtension:
             gen = torch.Generator(device=p.device)
             gen.manual_seed(int(seed))
             noise = torch.randn(p.shape, dtype=p.dtype, device=p.device, generator=gen)
-            p.data.add_(-float(SIGMA) * noise)
+            p.data.add_(noise,alpha=-float(SIGMA))
             del noise
         if torch.cuda.is_available():
             torch.cuda.synchronize()
