@@ -1,0 +1,3525 @@
+INFO 02-03 04:07:13 [__init__.py:216] Automatically detected platform cuda.
+[36m(pid=31120)[0m INFO 02-03 04:08:22 [__init__.py:216] Automatically detected platform cuda.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:35 [utils.py:233] non-default args: {'dtype': 'float16', 'distributed_executor_backend': 'ray', 'enable_prefix_caching': False, 'disable_log_stats': True, 'worker_extension_cls': 'utils.worker_extn.WorkerExtension', 'model': 'es-ft-experiment/countdown_nccl_20260203_040745/model_saves/base_model'}
+[36m(ESNcclLLM pid=31120)[0m WARNING 02-03 04:08:35 [model.py:371] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:35 [model.py:547] Resolved architecture: Lfm2ForCausalLM
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:35 [model.py:1510] Using max model len 128000
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:35 [arg_utils.py:1215] Using ray runtime env: {}
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:35 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:35 [config.py:297] Hybrid or mamba-based model detected: disabling prefix caching since it is not yet supported.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:41 [config.py:376] Setting attention block size to 16 tokens to ensure that attention page size is >= mamba page size.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:41 [config.py:397] Padding mamba page size by 300.00% to ensure that mamba page size and attention page size are exactly equal.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:41 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='es-ft-experiment/countdown_nccl_20260203_040745/model_saves/base_model', speculative_config=None, tokenizer='es-ft-experiment/countdown_nccl_20260203_040745/model_saves/base_model', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=128000, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=es-ft-experiment/countdown_nccl_20260203_040745/model_saves/base_model, enable_prefix_caching=False, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":512,"local_cache_dir":null}
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:41 [ray_utils.py:295] Ray is already initialized. Skipping Ray initialization.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:41 [ray_utils.py:324] Using the existing placement group
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:08:41 [ray_distributed_executor.py:171] use_ray_spmd_worker: True
+[36m(pid=31123)[0m INFO 02-03 04:08:57 [__init__.py:216] Automatically detected platform cuda.
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:04 [ray_env.py:63] RAY_NON_CARRY_OVER_ENV_VARS from config: set()
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:04 [ray_env.py:65] Copying the following environment variables to workers: ['VLLM_USE_V1', 'VLLM_ENABLE_V1_MULTIPROCESSING', 'VLLM_USE_RAY_SPMD_WORKER', 'LD_LIBRARY_PATH', 'VLLM_USE_RAY_COMPILED_DAG']
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:04 [ray_env.py:68] If certain env vars should NOT be copied, add them to /root/.config/vllm/ray_non_carry_over_env_vars.json file
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:16 [worker_base.py:243] Injected <class 'utils.worker_extn.WorkerExtension'> into <class 'vllm.v1.worker.gpu_worker.Worker'> for extended collective_rpc calls ['broadcast_all_weights', 'init_inter_engine_group', 'perturb_self_weights', 'restore_self_weights', 'save_self_weights_to_disk']
+[36m(RayWorkerWrapper pid=31123)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=31123)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=31123)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=31123)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=31123)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=31123)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:16 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:17 [topk_topp_sampler.py:55] Using FlashInfer for top-p & top-k sampling.
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:17 [gpu_model_runner.py:2602] Starting to load model es-ft-experiment/countdown_nccl_20260203_040745/model_saves/base_model...
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:17 [gpu_model_runner.py:2634] Loading model from scratch...
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:18 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:23 [default_loader.py:267] Loading weights took 4.51 seconds
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:23 [gpu_model_runner.py:2653] Model loading took 2.1956 GiB and 5.228342 seconds
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:35 [backends.py:548] Using cache directory: /root/.cache/vllm/torch_compile_cache/e48d07aa08/rank_0_0/backbone for vLLM's torch.compile
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:35 [backends.py:559] Dynamo bytecode transform time: 11.66 s
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:37 [backends.py:197] Cache the graph for dynamic shape for later use
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:47 [backends.py:218] Compiling a graph for dynamic shape takes 12.29 s
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:50 [monitor.py:34] torch.compile takes 23.96 s in total
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:51 [gpu_worker.py:298] Available KV cache memory: 18.47 GiB
+[36m(ESNcclLLM pid=31120)[0m WARNING 02-03 04:09:51 [kv_cache_utils.py:982] Add 2 padding layers, may waste at most 20.00% KV cache memory
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:51 [kv_cache_utils.py:1087] GPU KV cache size: 537,888 tokens
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:51 [kv_cache_utils.py:1091] Maximum concurrency for 128,000 tokens per request: 12.60x
+[36m(RayWorkerWrapper pid=31123)[0m WARNING 02-03 04:09:51 [gpu_model_runner.py:3663] CUDAGraphMode.FULL_AND_PIECEWISE is not supported with ShortConvAttentionMetadataBuilder backend (support: AttentionCGSupport.NEVER); setting cudagraph_mode=PIECEWISE because attention is compiled piecewise
+[36m(RayWorkerWrapper pid=31123)[0m INFO 02-03 04:09:54 [gpu_model_runner.py:3480] Graph capturing finished in 2 secs, took 0.27 GiB
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:54 [core.py:210] init engine (profile, create kv cache, warmup model) took 30.90 seconds
+
+
+=== Generation 0 ===
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:55 [llm.py:306] Supported_tasks: ('generate',)
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:55 [ray_distributed_executor.py:552] RAY_CGRAPH_get_timeout is set to 300
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:55 [ray_distributed_executor.py:554] VLLM_USE_RAY_COMPILED_DAG_CHANNEL_TYPE = auto
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:55 [ray_distributed_executor.py:556] VLLM_USE_RAY_COMPILED_DAG_OVERLAP_COMM = False
+[36m(ESNcclLLM pid=31120)[0m INFO 02-03 04:09:55 [ray_distributed_executor.py:621] Using RayPPCommunicator (which wraps vLLM _PP GroupCoordinator) for Ray Compiled Graph communication.
+Mean reward: 0.023765, std: 0.010414702348123063, min: 0.0050500000000000015, max: 0.05350000000000001
+wall clock time for iteration 0: 541.591790676117s
+=== Generation 0 finished ===
+
+
+
+=== Generation 1 ===
+Mean reward: 0.022096666666666667, std: 0.009469784697775459, min: 0.008150000000000001, max: 0.057700000000000015
+wall clock time for iteration 1: 529.4426562786102s
+=== Generation 1 finished ===
+
+
+
+=== Generation 2 ===
+Mean reward: 0.02387166666666667, std: 0.009760521530920139, min: 0.0109, max: 0.05120000000000001
+wall clock time for iteration 2: 536.69921708107s
+=== Generation 2 finished ===
+
+
+
+=== Generation 3 ===
+Mean reward: 0.022779999999999998, std: 0.008397426192987154, min: 0.00855, max: 0.05845000000000002
+wall clock time for iteration 3: 542.3272235393524s
+=== Generation 3 finished ===
+
+
+
+=== Generation 4 ===
+Mean reward: 0.02442833333333333, std: 0.008397099532312071, min: 0.010750000000000003, max: 0.05970000000000002
+wall clock time for iteration 4: 533.2182126045227s
+=== Generation 4 finished ===
+
+
+
+=== Generation 5 ===
+Mean reward: 0.026046666666666666, std: 0.00870422247468945, min: 0.009899999999999999, max: 0.05110000000000001
+wall clock time for iteration 5: 544.231472492218s
+=== Generation 5 finished ===
+
+
+
+=== Generation 6 ===
+Mean reward: 0.02570666666666667, std: 0.009261332997408575, min: 0.010550000000000002, max: 0.053399999999999996
+wall clock time for iteration 6: 538.5790145397186s
+=== Generation 6 finished ===
+
+
+
+=== Generation 7 ===
+Mean reward: 0.026820000000000004, std: 0.011360432796919904, min: 0.012650000000000002, max: 0.06415000000000001
+wall clock time for iteration 7: 540.2899503707886s
+=== Generation 7 finished ===
+
+
+
+=== Generation 8 ===
+Mean reward: 0.02684, std: 0.009496573066111798, min: 0.009000000000000001, max: 0.05390000000000002
+wall clock time for iteration 8: 539.7893326282501s
+=== Generation 8 finished ===
+
+
+
+=== Generation 9 ===
+Mean reward: 0.03129666666666667, std: 0.012247557126037652, min: 0.008700000000000001, max: 0.06000000000000002
+wall clock time for iteration 9: 546.6906685829163s
+=== Generation 9 finished ===
+
+
+
+=== Generation 10 ===
+Mean reward: 0.02879, std: 0.009756368860048976, min: 0.0109, max: 0.057200000000000015
+wall clock time for iteration 10: 544.974029302597s
+=== Generation 10 finished ===
+
+
+
+=== Generation 11 ===
+Mean reward: 0.02950333333333333, std: 0.01151038613118122, min: 0.009550000000000001, max: 0.06000000000000002
+wall clock time for iteration 11: 551.8694136142731s
+=== Generation 11 finished ===
+
+
+
+=== Generation 12 ===
+Mean reward: 0.03055166666666666, std: 0.008971282733750448, min: 0.01725, max: 0.05245000000000001
+wall clock time for iteration 12: 553.9110460281372s
+=== Generation 12 finished ===
+
+
+
+=== Generation 13 ===
+Mean reward: 0.03328333333333334, std: 0.015477808486848377, min: 0.00855, max: 0.08975000000000001
+wall clock time for iteration 13: 539.0238738059998s
+=== Generation 13 finished ===
+
+
+
+=== Generation 14 ===
+Mean reward: 0.03616166666666667, std: 0.013855712921230565, min: 0.011700000000000002, max: 0.06000000000000002
+wall clock time for iteration 14: 566.3408296108246s
+=== Generation 14 finished ===
+
+
+
+=== Generation 15 ===
+Mean reward: 0.040915, std: 0.014921366950338927, min: 0.013699999999999999, max: 0.060100000000000015
+wall clock time for iteration 15: 560.1499853134155s
+=== Generation 15 finished ===
+
+
+
+=== Generation 16 ===
+Mean reward: 0.03475833333333334, std: 0.014720337877311862, min: 0.0076, max: 0.06000000000000002
+wall clock time for iteration 16: 564.2035562992096s
+=== Generation 16 finished ===
+
+
+
+=== Generation 17 ===
+Mean reward: 0.04028333333333334, std: 0.012747995485129773, min: 0.0172, max: 0.06000000000000002
+wall clock time for iteration 17: 567.305588722229s
+=== Generation 17 finished ===
+
+
+
+=== Generation 18 ===
+Mean reward: 0.03645333333333334, std: 0.013967986811117614, min: 0.0137, max: 0.05970000000000002
+wall clock time for iteration 18: 568.4865221977234s
+=== Generation 18 finished ===
+
+
+
+=== Generation 19 ===
+Mean reward: 0.04278166666666668, std: 0.014550735853862825, min: 0.0148, max: 0.060400000000000016
+wall clock time for iteration 19: 571.1693623065948s
+=== Generation 19 finished ===
+
+
+
+=== Generation 20 ===
+Mean reward: 0.041081666666666676, std: 0.013776008634175907, min: 0.0077, max: 0.06000000000000002
+wall clock time for iteration 20: 573.6174094676971s
+=== Generation 20 finished ===
+
+
+
+=== Generation 21 ===
+Mean reward: 0.04422833333333334, std: 0.012580684158220053, min: 0.0229, max: 0.06520000000000001
+wall clock time for iteration 21: 572.2813832759857s
+=== Generation 21 finished ===
+
+
+
+=== Generation 22 ===
+Mean reward: 0.04085000000000001, std: 0.013313445584571015, min: 0.01135, max: 0.06020000000000001
+wall clock time for iteration 22: 560.5496182441711s
+=== Generation 22 finished ===
+
+
+
+=== Generation 23 ===
+Mean reward: 0.04939500000000001, std: 0.012892112252588149, min: 0.017, max: 0.06060000000000002
+wall clock time for iteration 23: 591.9622278213501s
+=== Generation 23 finished ===
+
+
+
+=== Generation 24 ===
+Mean reward: 0.044978333333333335, std: 0.019733172930091324, min: 0.011200000000000002, max: 0.10595
+wall clock time for iteration 24: 597.1574013233185s
+=== Generation 24 finished ===
+
+
+
+=== Generation 25 ===
+Mean reward: 0.04244833333333334, std: 0.015460414415172999, min: 0.01205, max: 0.06060000000000002
+wall clock time for iteration 25: 592.1913690567017s
+=== Generation 25 finished ===
+
+
+
+=== Generation 26 ===
+Mean reward: 0.050413333333333345, std: 0.014385182963344229, min: 0.02185, max: 0.06500000000000002
+wall clock time for iteration 26: 606.27166223526s
+=== Generation 26 finished ===
+
+
+
+=== Generation 27 ===
+Mean reward: 0.05188, std: 0.013841517257873148, min: 0.016849999999999997, max: 0.06920000000000001
+wall clock time for iteration 27: 590.1666278839111s
+=== Generation 27 finished ===
+
+
+
+=== Generation 28 ===
+Mean reward: 0.050538333333333345, std: 0.019088795506497763, min: 0.01685, max: 0.11015000000000001
+wall clock time for iteration 28: 577.9647350311279s
+=== Generation 28 finished ===
+
+
+
+=== Generation 29 ===
+Mean reward: 0.051390000000000005, std: 0.01226151431648365, min: 0.01325, max: 0.06500000000000002
+wall clock time for iteration 29: 594.1077272891998s
+=== Generation 29 finished ===
+
+
+
+=== Generation 30 ===
+Mean reward: 0.05444166666666668, std: 0.0102041664965292, min: 0.023700000000000002, max: 0.07060000000000001
+wall clock time for iteration 30: 596.4305312633514s
+=== Generation 30 finished ===
+
+
+
+=== Generation 31 ===
+Mean reward: 0.056160000000000015, std: 0.007909597545598224, min: 0.03455, max: 0.07210000000000001
+wall clock time for iteration 31: 595.1194944381714s
+=== Generation 31 finished ===
+
+
+
+=== Generation 32 ===
+Mean reward: 0.05166333333333333, std: 0.011528305262362825, min: 0.02635, max: 0.06065000000000001
+wall clock time for iteration 32: 598.0087292194366s
+=== Generation 32 finished ===
+
+
+
+=== Generation 33 ===
+Mean reward: 0.05140000000000001, std: 0.012798137885385261, min: 0.017, max: 0.06240000000000001
+wall clock time for iteration 33: 598.1879742145538s
+=== Generation 33 finished ===
+
+
+
+=== Generation 34 ===
+Mean reward: 0.05403500000000001, std: 0.011388906517601537, min: 0.0159, max: 0.06120000000000002
+wall clock time for iteration 34: 603.6814112663269s
+=== Generation 34 finished ===
+
+
+
+=== Generation 35 ===
+Mean reward: 0.052575000000000024, std: 0.012396382200733684, min: 0.019649999999999997, max: 0.06500000000000002
+wall clock time for iteration 35: 589.2709560394287s
+=== Generation 35 finished ===
+
+
+
+=== Generation 36 ===
+Mean reward: 0.05504833333333335, std: 0.009647775938295605, min: 0.024300000000000006, max: 0.06540000000000001
+wall clock time for iteration 36: 602.5201635360718s
+=== Generation 36 finished ===
+
+
+
+=== Generation 37 ===
+Mean reward: 0.05873666666666668, std: 0.006482372679471276, min: 0.02645, max: 0.06500000000000002
+wall clock time for iteration 37: 611.5889601707458s
+=== Generation 37 finished ===
+
+
+
+=== Generation 38 ===
+Mean reward: 0.05606666666666669, std: 0.008554543951738299, min: 0.021949999999999997, max: 0.06125000000000002
+wall clock time for iteration 38: 604.2317621707916s
+=== Generation 38 finished ===
+
+
+
+=== Generation 39 ===
+Mean reward: 0.05541833333333335, std: 0.010764041088529701, min: 0.0269, max: 0.06500000000000002
+wall clock time for iteration 39: 597.0443115234375s
+=== Generation 39 finished ===
+
+
+
+=== Generation 40 ===
+Mean reward: 0.05691166666666668, std: 0.008593851322635017, min: 0.023250000000000003, max: 0.06540000000000003
+wall clock time for iteration 40: 608.9764556884766s
+=== Generation 40 finished ===
+
+
+
+=== Generation 41 ===
+Mean reward: 0.05898166666666669, std: 0.0059819239287113085, min: 0.0357, max: 0.06620000000000001
+wall clock time for iteration 41: 600.4460754394531s
+=== Generation 41 finished ===
+
+
+
+=== Generation 42 ===
+Mean reward: 0.05862166666666668, std: 0.006666466872006159, min: 0.025750000000000002, max: 0.06520000000000001
+wall clock time for iteration 42: 596.5776982307434s
+=== Generation 42 finished ===
+
+
+
+=== Generation 43 ===
+Mean reward: 0.05920166666666669, std: 0.006837317740816858, min: 0.03305, max: 0.07000000000000002
+wall clock time for iteration 43: 607.6726036071777s
+=== Generation 43 finished ===
+
+
+
+=== Generation 44 ===
+Mean reward: 0.05825000000000002, std: 0.008214752988779805, min: 0.0241, max: 0.07490000000000002
+wall clock time for iteration 44: 607.5085067749023s
+=== Generation 44 finished ===
+
+
+
+=== Generation 45 ===
+Mean reward: 0.057236666666666686, std: 0.009992037941392251, min: 0.0206, max: 0.064
+wall clock time for iteration 45: 612.9564175605774s
+=== Generation 45 finished ===
+
+
+
+=== Generation 46 ===
+Mean reward: 0.06035666666666668, std: 0.002557594355813467, min: 0.04885, max: 0.06500000000000002
+wall clock time for iteration 46: 614.3178436756134s
+=== Generation 46 finished ===
+
+
+
+=== Generation 47 ===
+Mean reward: 0.05938000000000001, std: 0.008378122303555457, min: 0.023900000000000005, max: 0.07580000000000002
+wall clock time for iteration 47: 616.5505545139313s
+=== Generation 47 finished ===
+
+
+
+=== Generation 48 ===
+Mean reward: 0.06090333333333335, std: 0.0022331940255059667, min: 0.05785000000000002, max: 0.069
+wall clock time for iteration 48: 619.7691733837128s
+=== Generation 48 finished ===
+
+
+
+=== Generation 49 ===
+Mean reward: 0.06006333333333334, std: 0.007192240417437549, min: 0.035750000000000004, max: 0.07340000000000002
+wall clock time for iteration 49: 614.3089263439178s
+=== Generation 49 finished ===
+
+
+
+=== Generation 50 ===
+Mean reward: 0.06137166666666668, std: 0.005931437197022509, min: 0.043600000000000014, max: 0.08120000000000001
+wall clock time for iteration 50: 603.7133128643036s
+=== Generation 50 finished ===
+
+
+
+=== Generation 51 ===
+Mean reward: 0.06314833333333335, std: 0.005092780565554428, min: 0.057500000000000016, max: 0.08500000000000002
+wall clock time for iteration 51: 687.2542991638184s
+=== Generation 51 finished ===
+
+
+
+=== Generation 52 ===
+Mean reward: 0.06113166666666668, std: 0.008641079054274544, min: 0.024750000000000005, max: 0.08000000000000002
+wall clock time for iteration 52: 631.6291351318359s
+=== Generation 52 finished ===
+
+
+
+=== Generation 53 ===
+Mean reward: 0.06600666666666669, std: 0.00970792402570647, min: 0.0489, max: 0.09140000000000001
+wall clock time for iteration 53: 611.9888296127319s
+=== Generation 53 finished ===
+
+
+
+=== Generation 54 ===
+Mean reward: 0.06520000000000001, std: 0.012788256331494144, min: 0.05015000000000001, max: 0.11500000000000003
+wall clock time for iteration 54: 612.6669046878815s
+=== Generation 54 finished ===
+
+
+
+=== Generation 55 ===
+Mean reward: 0.06564333333333335, std: 0.008498840443783429, min: 0.05510000000000001, max: 0.09600000000000002
+wall clock time for iteration 55: 628.522531747818s
+=== Generation 55 finished ===
+
+
+
+=== Generation 56 ===
+Mean reward: 0.0641466666666667, std: 0.006135374660297629, min: 0.05715000000000001, max: 0.08500000000000002
+wall clock time for iteration 56: 618.4029493331909s
+=== Generation 56 finished ===
+
+
+
+=== Generation 57 ===
+Mean reward: 0.07074166666666667, std: 0.017297500220809045, min: 0.05515000000000001, max: 0.12650000000000003
+wall clock time for iteration 57: 607.6793372631073s
+=== Generation 57 finished ===
+
+
+
+=== Generation 58 ===
+Mean reward: 0.07717, std: 0.021323842680592696, min: 0.05095000000000001, max: 0.135
+wall clock time for iteration 58: 604.638069152832s
+=== Generation 58 finished ===
+
+
+
+=== Generation 59 ===
+Mean reward: 0.08576833333333336, std: 0.02304910874391652, min: 0.06000000000000002, max: 0.13080000000000003
+wall clock time for iteration 59: 618.2952196598053s
+=== Generation 59 finished ===
+
+
+
+=== Generation 60 ===
+Mean reward: 0.09654666666666668, std: 0.037847760685262334, min: 0.0565, max: 0.23000000000000004
+wall clock time for iteration 60: 623.3025250434875s
+=== Generation 60 finished ===
+
+
+
+=== Generation 61 ===
+Mean reward: 0.10630833333333335, std: 0.040468790615595246, min: 0.06000000000000002, max: 0.24260000000000004
+wall clock time for iteration 61: 676.6407017707825s
+=== Generation 61 finished ===
+
+
+
+=== Generation 62 ===
+Mean reward: 0.11516166666666669, std: 0.04595810534848258, min: 0.049, max: 0.19640000000000005
+wall clock time for iteration 62: 626.7711424827576s
+=== Generation 62 finished ===
+
+
+
+=== Generation 63 ===
+Mean reward: 0.1294766666666667, std: 0.042916643495139385, min: 0.06960000000000001, max: 0.24920000000000006
+wall clock time for iteration 63: 615.2745318412781s
+=== Generation 63 finished ===
+
+
+
+=== Generation 64 ===
+Mean reward: 0.12973833333333337, std: 0.06124948119961689, min: 0.06060000000000002, max: 0.33380000000000004
+wall clock time for iteration 64: 632.5887687206268s
+=== Generation 64 finished ===
+
+
+
+=== Generation 65 ===
+Mean reward: 0.15266500000000008, std: 0.05172605589384652, min: 0.07180000000000002, max: 0.27480000000000004
+wall clock time for iteration 65: 602.8267838954926s
+=== Generation 65 finished ===
+
+
+
+=== Generation 66 ===
+Mean reward: 0.16247, std: 0.05871036194744502, min: 0.06360000000000002, max: 0.25500000000000006
+wall clock time for iteration 66: 600.5108020305634s
+=== Generation 66 finished ===
+
+
+
+=== Generation 67 ===
+Mean reward: 0.19359666666666667, std: 0.06332595299103064, min: 0.07520000000000002, max: 0.3308
+wall clock time for iteration 67: 602.7806916236877s
+=== Generation 67 finished ===
+
+
+
+=== Generation 68 ===
+Mean reward: 0.20028666666666667, std: 0.07230838924741412, min: 0.06609999999999999, max: 0.3636
+wall clock time for iteration 68: 605.9345722198486s
+=== Generation 68 finished ===
+
+
+
+=== Generation 69 ===
+Mean reward: 0.21786333333333335, std: 0.057375223940497364, min: 0.08020000000000001, max: 0.331
+wall clock time for iteration 69: 601.8529627323151s
+=== Generation 69 finished ===
+
+
+
+=== Generation 70 ===
+Mean reward: 0.24109666666666676, std: 0.05337457093244143, min: 0.07975000000000002, max: 0.3340000000000001
+wall clock time for iteration 70: 603.2989885807037s
+=== Generation 70 finished ===
+
+
+
+=== Generation 71 ===
+Mean reward: 0.268365, std: 0.06459423110206255, min: 0.09000000000000002, max: 0.38939999999999997
+wall clock time for iteration 71: 592.9632477760315s
+=== Generation 71 finished ===
+
+
+
+=== Generation 72 ===
+Mean reward: 0.2794416666666667, std: 0.0643084819228554, min: 0.1344, max: 0.3956
+wall clock time for iteration 72: 596.1949532032013s
+=== Generation 72 finished ===
+
+
+
+=== Generation 73 ===
+Mean reward: 0.31012333333333336, std: 0.060286399424377274, min: 0.1683, max: 0.42480000000000007
+wall clock time for iteration 73: 598.4969248771667s
+=== Generation 73 finished ===
+
+
+
+=== Generation 74 ===
+Mean reward: 0.32272833333333334, std: 0.06848945744094895, min: 0.08700000000000002, max: 0.41580000000000006
+wall clock time for iteration 74: 612.3834302425385s
+=== Generation 74 finished ===
+
+
+
+=== Generation 75 ===
+Mean reward: 0.3490366666666667, std: 0.03737888426490133, min: 0.2456, max: 0.4482
+wall clock time for iteration 75: 612.8672490119934s
+=== Generation 75 finished ===
+
+
+
+=== Generation 76 ===
+Mean reward: 0.33510000000000006, std: 0.06663446055408068, min: 0.14240000000000003, max: 0.426
+wall clock time for iteration 76: 595.1839942932129s
+=== Generation 76 finished ===
+
+
+
+=== Generation 77 ===
+Mean reward: 0.3524883333333334, std: 0.04917206809313144, min: 0.24380000000000002, max: 0.44079999999999997
+wall clock time for iteration 77: 592.2422630786896s
+=== Generation 77 finished ===
+
+
+
+=== Generation 78 ===
+Mean reward: 0.36377166666666666, std: 0.05794802366968369, min: 0.22440000000000002, max: 0.49879999999999997
+wall clock time for iteration 78: 594.3518521785736s
+=== Generation 78 finished ===
+
+
+
+=== Generation 79 ===
+Mean reward: 0.3872833333333333, std: 0.04006419293528268, min: 0.32480000000000003, max: 0.46220000000000006
+wall clock time for iteration 79: 583.5741927623749s
+=== Generation 79 finished ===
+
+
+
+=== Generation 80 ===
+Mean reward: 0.39030666666666664, std: 0.052455155026831145, min: 0.21280000000000004, max: 0.4506
+wall clock time for iteration 80: 591.8935778141022s
+=== Generation 80 finished ===
+
+
+
+=== Generation 81 ===
+Mean reward: 0.40764166666666657, std: 0.05060938661838225, min: 0.3006, max: 0.4914
+wall clock time for iteration 81: 590.0976850986481s
+=== Generation 81 finished ===
+
+
+
+=== Generation 82 ===
+Mean reward: 0.4166533333333334, std: 0.035818495997955516, min: 0.3428, max: 0.4916
+wall clock time for iteration 82: 580.5919079780579s
+=== Generation 82 finished ===
+
+
+
+=== Generation 83 ===
+Mean reward: 0.43950333333333336, std: 0.041787759239066906, min: 0.33995000000000003, max: 0.5008
+wall clock time for iteration 83: 578.5405778884888s
+=== Generation 83 finished ===
+
+
+
+=== Generation 84 ===
+Mean reward: 0.4241633333333333, std: 0.03595277674332756, min: 0.3328, max: 0.48064999999999997
+wall clock time for iteration 84: 578.1601550579071s
+=== Generation 84 finished ===
+
+
+
+=== Generation 85 ===
+Mean reward: 0.43929333333333337, std: 0.03407141454194247, min: 0.36920000000000003, max: 0.528
+wall clock time for iteration 85: 573.1396489143372s
+=== Generation 85 finished ===
+
+
+
+=== Generation 86 ===
+Mean reward: 0.43471000000000004, std: 0.03700462673774726, min: 0.3722, max: 0.5102
+wall clock time for iteration 86: 572.1104378700256s
+=== Generation 86 finished ===
+
+
+
+=== Generation 87 ===
+Mean reward: 0.4480683333333333, std: 0.043746654126026865, min: 0.3432, max: 0.5586
+wall clock time for iteration 87: 567.463876247406s
+=== Generation 87 finished ===
+
+
+
+=== Generation 88 ===
+Mean reward: 0.4535833333333333, std: 0.04089080852981783, min: 0.3716, max: 0.5388000000000001
+wall clock time for iteration 88: 564.6879723072052s
+=== Generation 88 finished ===
+
+
+
+=== Generation 89 ===
+Mean reward: 0.45894, std: 0.04416557935768531, min: 0.3582, max: 0.5274
+wall clock time for iteration 89: 561.0500781536102s
+=== Generation 89 finished ===
+
+
+
+=== Generation 90 ===
+Mean reward: 0.4662016666666667, std: 0.033744087095206605, min: 0.37854999999999994, max: 0.521
+wall clock time for iteration 90: 575.9626615047455s
+=== Generation 90 finished ===
+
+
+
+=== Generation 91 ===
+Mean reward: 0.4657516666666666, std: 0.03905468704977105, min: 0.37825000000000003, max: 0.5371
+wall clock time for iteration 91: 563.0287177562714s
+=== Generation 91 finished ===
+
+
+
+=== Generation 92 ===
+Mean reward: 0.480425, std: 0.030060876428784754, min: 0.42879999999999996, max: 0.5396000000000001
+wall clock time for iteration 92: 562.038051366806s
+=== Generation 92 finished ===
+
+
+
+=== Generation 93 ===
+Mean reward: 0.4789116666666666, std: 0.040053218104860865, min: 0.39399999999999996, max: 0.5531999999999999
+wall clock time for iteration 93: 556.8052043914795s
+=== Generation 93 finished ===
+
+
+
+=== Generation 94 ===
+Mean reward: 0.49508166666666675, std: 0.04064775615646643, min: 0.34820000000000007, max: 0.5670000000000001
+wall clock time for iteration 94: 552.6394529342651s
+=== Generation 94 finished ===
+
+
+
+=== Generation 95 ===
+Mean reward: 0.50254, std: 0.02578684871531739, min: 0.4546, max: 0.5434
+wall clock time for iteration 95: 555.2937121391296s
+=== Generation 95 finished ===
+
+
+
+=== Generation 96 ===
+Mean reward: 0.5021716666666667, std: 0.03522904030137005, min: 0.41620000000000007, max: 0.5622
+wall clock time for iteration 96: 556.2668495178223s
+=== Generation 96 finished ===
+
+
+
+=== Generation 97 ===
+Mean reward: 0.4907100000000001, std: 0.0529570366743961, min: 0.29605000000000004, max: 0.5714
+wall clock time for iteration 97: 546.4374146461487s
+=== Generation 97 finished ===
+
+
+
+=== Generation 98 ===
+Mean reward: 0.5057566666666667, std: 0.027827620371773717, min: 0.4464, max: 0.5692
+wall clock time for iteration 98: 546.199122428894s
+=== Generation 98 finished ===
+
+
+
+=== Generation 99 ===
+Mean reward: 0.51235, std: 0.03699896620177379, min: 0.38315, max: 0.5746
+wall clock time for iteration 99: 533.7497546672821s
+=== Generation 99 finished ===
+
+
+
+=== Generation 100 ===
+Mean reward: 0.524215, std: 0.0337695403926872, min: 0.45520000000000005, max: 0.5948
+wall clock time for iteration 100: 543.4349477291107s
+=== Generation 100 finished ===
+
+
+
+=== Generation 101 ===
+Mean reward: 0.5181916666666667, std: 0.02477189295462814, min: 0.4558, max: 0.5586
+wall clock time for iteration 101: 543.6211700439453s
+=== Generation 101 finished ===
+
+
+
+=== Generation 102 ===
+Mean reward: 0.5076833333333333, std: 0.060655865796768196, min: 0.20630000000000004, max: 0.5648000000000001
+wall clock time for iteration 102: 545.6268877983093s
+=== Generation 102 finished ===
+
+
+
+=== Generation 103 ===
+Mean reward: 0.5321183333333334, std: 0.02593862462086653, min: 0.45184999999999986, max: 0.5748
+wall clock time for iteration 103: 543.8540923595428s
+=== Generation 103 finished ===
+
+
+
+=== Generation 104 ===
+Mean reward: 0.5325016666666668, std: 0.022593942710873244, min: 0.47259999999999996, max: 0.584
+wall clock time for iteration 104: 544.9270350933075s
+=== Generation 104 finished ===
+
+
+
+=== Generation 105 ===
+Mean reward: 0.5315633333333334, std: 0.028541466714628056, min: 0.46085, max: 0.5836
+wall clock time for iteration 105: 546.838212966919s
+=== Generation 105 finished ===
+
+
+
+=== Generation 106 ===
+Mean reward: 0.5393166666666667, std: 0.04092484236038329, min: 0.37185, max: 0.6004
+wall clock time for iteration 106: 544.5226333141327s
+=== Generation 106 finished ===
+
+
+
+=== Generation 107 ===
+Mean reward: 0.5407033333333333, std: 0.024623792468983226, min: 0.4583500000000001, max: 0.5796
+wall clock time for iteration 107: 538.1030848026276s
+=== Generation 107 finished ===
+
+
+
+=== Generation 108 ===
+Mean reward: 0.5356983333333333, std: 0.05445310288577584, min: 0.30985, max: 0.6008
+wall clock time for iteration 108: 530.7060673236847s
+=== Generation 108 finished ===
+
+
+
+=== Generation 109 ===
+Mean reward: 0.54341, std: 0.02195922509258163, min: 0.49560000000000004, max: 0.5781000000000001
+wall clock time for iteration 109: 539.2193584442139s
+=== Generation 109 finished ===
+
+
+
+=== Generation 110 ===
+Mean reward: 0.5555583333333334, std: 0.024777237817983033, min: 0.50735, max: 0.6058
+wall clock time for iteration 110: 543.3768534660339s
+=== Generation 110 finished ===
+
+
+
+=== Generation 111 ===
+Mean reward: 0.5405433333333334, std: 0.05111370125079532, min: 0.29805, max: 0.5863499999999999
+wall clock time for iteration 111: 531.8079388141632s
+=== Generation 111 finished ===
+
+
+
+=== Generation 112 ===
+Mean reward: 0.5490333333333334, std: 0.024064286585911684, min: 0.5075999999999999, max: 0.585
+wall clock time for iteration 112: 535.8651571273804s
+=== Generation 112 finished ===
+
+
+
+=== Generation 113 ===
+Mean reward: 0.5500516666666666, std: 0.022436241081983596, min: 0.5015999999999999, max: 0.5955999999999999
+wall clock time for iteration 113: 542.3412389755249s
+=== Generation 113 finished ===
+
+
+
+=== Generation 114 ===
+Mean reward: 0.563535, std: 0.027216178246280903, min: 0.48605, max: 0.6156
+wall clock time for iteration 114: 522.8134393692017s
+=== Generation 114 finished ===
+
+
+
+=== Generation 115 ===
+Mean reward: 0.5574483333333332, std: 0.020708249094396055, min: 0.5155000000000001, max: 0.6
+wall clock time for iteration 115: 529.8146367073059s
+=== Generation 115 finished ===
+
+
+
+=== Generation 116 ===
+Mean reward: 0.5510983333333334, std: 0.043843778508345845, min: 0.35864999999999997, max: 0.6106
+wall clock time for iteration 116: 523.6731595993042s
+=== Generation 116 finished ===
+
+
+
+=== Generation 117 ===
+Mean reward: 0.534725, std: 0.09949268126349796, min: 0.020500000000000008, max: 0.6008
+wall clock time for iteration 117: 534.8693721294403s
+=== Generation 117 finished ===
+
+
+
+=== Generation 118 ===
+Mean reward: 0.555275, std: 0.0454063463809484, min: 0.35125, max: 0.6061999999999999
+wall clock time for iteration 118: 532.3290514945984s
+=== Generation 118 finished ===
+
+
+
+=== Generation 119 ===
+Mean reward: 0.562385, std: 0.01851247844923343, min: 0.5278, max: 0.5997999999999999
+wall clock time for iteration 119: 527.3031387329102s
+=== Generation 119 finished ===
+
+
+
+=== Generation 120 ===
+Mean reward: 0.5343266666666666, std: 0.08987911301050736, min: 0.21779999999999997, max: 0.5923999999999999
+wall clock time for iteration 120: 500.43639183044434s
+=== Generation 120 finished ===
+
+
+
+=== Generation 121 ===
+Mean reward: 0.566145, std: 0.020980949096740115, min: 0.51255, max: 0.6
+wall clock time for iteration 121: 527.1520750522614s
+=== Generation 121 finished ===
+
+
+
+=== Generation 122 ===
+Mean reward: 0.5574566666666667, std: 0.039231540740695986, min: 0.3766, max: 0.611
+wall clock time for iteration 122: 522.3712990283966s
+=== Generation 122 finished ===
+
+
+
+=== Generation 123 ===
+Mean reward: 0.5718016666666668, std: 0.021801309147745133, min: 0.5191499999999999, max: 0.6161999999999999
+wall clock time for iteration 123: 514.0071556568146s
+=== Generation 123 finished ===
+
+
+
+=== Generation 124 ===
+Mean reward: 0.5732133333333334, std: 0.0215211250222246, min: 0.5237999999999999, max: 0.6095999999999999
+wall clock time for iteration 124: 520.2873508930206s
+=== Generation 124 finished ===
+
+
+
+=== Generation 125 ===
+Mean reward: 0.5711899999999999, std: 0.029745076343265047, min: 0.4575, max: 0.6043999999999999
+wall clock time for iteration 125: 520.4636013507843s
+=== Generation 125 finished ===
+
+
+
+=== Generation 126 ===
+Mean reward: 0.5779866666666668, std: 0.025789089855121988, min: 0.4855, max: 0.6216
+wall clock time for iteration 126: 514.9865961074829s
+=== Generation 126 finished ===
+
+
+
+=== Generation 127 ===
+Mean reward: 0.5727783333333333, std: 0.050003704335001245, min: 0.3208, max: 0.621
+wall clock time for iteration 127: 509.15877890586853s
+=== Generation 127 finished ===
+
+
+
+=== Generation 128 ===
+Mean reward: 0.5776466666666666, std: 0.023132120285198423, min: 0.4878, max: 0.6005999999999999
+wall clock time for iteration 128: 503.25112104415894s
+=== Generation 128 finished ===
+
+
+
+=== Generation 129 ===
+Mean reward: 0.5704449999999999, std: 0.027948534099901078, min: 0.48394999999999994, max: 0.6267999999999999
+wall clock time for iteration 129: 512.4850835800171s
+=== Generation 129 finished ===
+
+
+
+=== Generation 130 ===
+Mean reward: 0.5788499999999999, std: 0.024071840394951128, min: 0.5291999999999999, max: 0.6252
+wall clock time for iteration 130: 507.77094078063965s
+=== Generation 130 finished ===
+
+
+
+=== Generation 131 ===
+Mean reward: 0.5755916666666666, std: 0.026696722905422094, min: 0.4765, max: 0.6208
+wall clock time for iteration 131: 508.4978630542755s
+=== Generation 131 finished ===
+
+
+
+=== Generation 132 ===
+Mean reward: 0.566195, std: 0.049179173013922585, min: 0.4004000000000001, max: 0.6202
+wall clock time for iteration 132: 502.91579008102417s
+=== Generation 132 finished ===
+
+
+
+=== Generation 133 ===
+Mean reward: 0.5776016666666666, std: 0.028204380520684285, min: 0.5100000000000001, max: 0.6302
+wall clock time for iteration 133: 501.2470655441284s
+=== Generation 133 finished ===
+
+
+
+=== Generation 134 ===
+Mean reward: 0.5803966666666667, std: 0.02069514408958993, min: 0.53485, max: 0.6214
+wall clock time for iteration 134: 505.9867539405823s
+=== Generation 134 finished ===
+
+
+
+=== Generation 135 ===
+Mean reward: 0.5786750000000002, std: 0.028118294015344054, min: 0.5025999999999999, max: 0.6304
+wall clock time for iteration 135: 503.51759672164917s
+=== Generation 135 finished ===
+
+
+
+=== Generation 136 ===
+Mean reward: 0.5689416666666667, std: 0.06560708432699085, min: 0.23950000000000002, max: 0.6204
+wall clock time for iteration 136: 502.63407492637634s
+=== Generation 136 finished ===
+
+
+
+=== Generation 137 ===
+Mean reward: 0.5846516666666666, std: 0.0177317816520381, min: 0.52675, max: 0.6154
+wall clock time for iteration 137: 499.0635356903076s
+=== Generation 137 finished ===
+
+
+
+=== Generation 138 ===
+Mean reward: 0.5856099999999999, std: 0.016760332136724912, min: 0.54675, max: 0.6158
+wall clock time for iteration 138: 505.68238043785095s
+=== Generation 138 finished ===
+
+
+
+=== Generation 139 ===
+Mean reward: 0.5723766666666668, std: 0.056330615910789465, min: 0.29410000000000003, max: 0.6253
+wall clock time for iteration 139: 495.60364818573s
+=== Generation 139 finished ===
+
+
+
+=== Generation 140 ===
+Mean reward: 0.5876816666666665, std: 0.023560356828556075, min: 0.5384, max: 0.6257
+wall clock time for iteration 140: 499.9310395717621s
+=== Generation 140 finished ===
+
+
+
+=== Generation 141 ===
+Mean reward: 0.5958133333333334, std: 0.016949517856138453, min: 0.5645, max: 0.6372
+wall clock time for iteration 141: 493.27741169929504s
+=== Generation 141 finished ===
+
+
+
+=== Generation 142 ===
+Mean reward: 0.5896450000000001, std: 0.018117902518411645, min: 0.5541999999999999, max: 0.6474000000000001
+wall clock time for iteration 142: 497.45144724845886s
+=== Generation 142 finished ===
+
+
+
+=== Generation 143 ===
+Mean reward: 0.5915083333333334, std: 0.015589109891915646, min: 0.5595, max: 0.6265999999999999
+wall clock time for iteration 143: 495.8893508911133s
+=== Generation 143 finished ===
+
+
+
+=== Generation 144 ===
+Mean reward: 0.5941949999999998, std: 0.024503779810470066, min: 0.524, max: 0.6452
+wall clock time for iteration 144: 496.30669260025024s
+=== Generation 144 finished ===
+
+
+
+=== Generation 145 ===
+Mean reward: 0.5836933333333333, std: 0.04177491020004977, min: 0.3799, max: 0.6217
+wall clock time for iteration 145: 493.85970544815063s
+=== Generation 145 finished ===
+
+
+
+=== Generation 146 ===
+Mean reward: 0.5925583333333333, std: 0.02217610231507983, min: 0.5166000000000001, max: 0.6312000000000001
+wall clock time for iteration 146: 502.17441177368164s
+=== Generation 146 finished ===
+
+
+
+=== Generation 147 ===
+Mean reward: 0.6008549999999998, std: 0.0172269186159336, min: 0.5638, max: 0.6367999999999999
+wall clock time for iteration 147: 498.97168254852295s
+=== Generation 147 finished ===
+
+
+
+=== Generation 148 ===
+Mean reward: 0.5995083333333332, std: 0.019452515190129575, min: 0.5501, max: 0.6426
+wall clock time for iteration 148: 492.4331200122833s
+=== Generation 148 finished ===
+
+
+
+=== Generation 149 ===
+Mean reward: 0.5984499999999999, std: 0.017957496113508324, min: 0.56365, max: 0.6315999999999999
+wall clock time for iteration 149: 496.61588406562805s
+=== Generation 149 finished ===
+
+
+
+=== Generation 150 ===
+Mean reward: 0.5918716666666666, std: 0.016888051413811955, min: 0.5488, max: 0.6114
+wall clock time for iteration 150: 494.20255947113037s
+=== Generation 150 finished ===
+
+
+
+=== Generation 151 ===
+Mean reward: 0.6016316666666666, std: 0.022249312661043918, min: 0.5410499999999999, max: 0.6416
+wall clock time for iteration 151: 495.3526532649994s
+=== Generation 151 finished ===
+
+
+
+=== Generation 152 ===
+Mean reward: 0.5943149999999999, std: 0.038048826416417436, min: 0.41620000000000007, max: 0.6368
+wall clock time for iteration 152: 498.4250257015228s
+=== Generation 152 finished ===
+
+
+
+=== Generation 153 ===
+Mean reward: 0.5991783333333333, std: 0.020571455479755335, min: 0.5398, max: 0.6364
+wall clock time for iteration 153: 491.3334686756134s
+=== Generation 153 finished ===
+
+
+
+=== Generation 154 ===
+Mean reward: 0.5819233333333335, std: 0.03883545359018684, min: 0.41595, max: 0.631
+wall clock time for iteration 154: 495.0593571662903s
+=== Generation 154 finished ===
+
+
+
+=== Generation 155 ===
+Mean reward: 0.6023233333333332, std: 0.020834613560664416, min: 0.5538000000000001, max: 0.637
+wall clock time for iteration 155: 498.15937542915344s
+=== Generation 155 finished ===
+
+
+
+=== Generation 156 ===
+Mean reward: 0.5948733333333334, std: 0.01690142860496973, min: 0.563, max: 0.637
+wall clock time for iteration 156: 496.25119853019714s
+=== Generation 156 finished ===
+
+
+
+=== Generation 157 ===
+Mean reward: 0.5944133333333333, std: 0.017524915279554302, min: 0.5389999999999999, max: 0.6208
+wall clock time for iteration 157: 490.8750970363617s
+=== Generation 157 finished ===
+
+
+
+=== Generation 158 ===
+Mean reward: 0.6006683333333332, std: 0.018193792363208807, min: 0.56, max: 0.6364
+wall clock time for iteration 158: 490.2062623500824s
+=== Generation 158 finished ===
+
+
+
+=== Generation 159 ===
+Mean reward: 0.60173, std: 0.01638321091849824, min: 0.5689, max: 0.6422
+wall clock time for iteration 159: 490.06484389305115s
+=== Generation 159 finished ===
+
+
+
+=== Generation 160 ===
+Mean reward: 0.6052083333333333, std: 0.014741777840168705, min: 0.5747999999999999, max: 0.637
+wall clock time for iteration 160: 484.6031267642975s
+=== Generation 160 finished ===
+
+
+
+=== Generation 161 ===
+Mean reward: 0.5971216666666666, std: 0.015381659443058226, min: 0.55895, max: 0.6315999999999999
+wall clock time for iteration 161: 486.219762802124s
+=== Generation 161 finished ===
+
+
+
+=== Generation 162 ===
+Mean reward: 0.59771, std: 0.01859281402406136, min: 0.5385500000000001, max: 0.6419999999999999
+wall clock time for iteration 162: 487.16660261154175s
+=== Generation 162 finished ===
+
+
+
+=== Generation 163 ===
+Mean reward: 0.6061300000000001, std: 0.016070519593342332, min: 0.5694, max: 0.6417999999999999
+wall clock time for iteration 163: 492.03814339637756s
+=== Generation 163 finished ===
+
+
+
+=== Generation 164 ===
+Mean reward: 0.6032433333333334, std: 0.02098384987450007, min: 0.5457499999999998, max: 0.637
+wall clock time for iteration 164: 488.6957929134369s
+=== Generation 164 finished ===
+
+
+
+=== Generation 165 ===
+Mean reward: 0.6028433333333332, std: 0.015901099193312243, min: 0.5765499999999999, max: 0.637
+wall clock time for iteration 165: 485.5978002548218s
+=== Generation 165 finished ===
+
+
+
+=== Generation 166 ===
+Mean reward: 0.6056016666666667, std: 0.020326999628299525, min: 0.5269999999999999, max: 0.6522
+wall clock time for iteration 166: 487.4893682003021s
+=== Generation 166 finished ===
+
+
+
+=== Generation 167 ===
+Mean reward: 0.59753, std: 0.021618894513827487, min: 0.5408499999999999, max: 0.6417999999999999
+wall clock time for iteration 167: 483.7188081741333s
+=== Generation 167 finished ===
+
+
+
+=== Generation 168 ===
+Mean reward: 0.5925383333333333, std: 0.04507317510325723, min: 0.38095, max: 0.6348999999999999
+wall clock time for iteration 168: 481.5147325992584s
+=== Generation 168 finished ===
+
+
+
+=== Generation 169 ===
+Mean reward: 0.5937383333333331, std: 0.05456909027910296, min: 0.31755, max: 0.637
+wall clock time for iteration 169: 474.9060287475586s
+=== Generation 169 finished ===
+
+
+
+=== Generation 170 ===
+Mean reward: 0.6073883333333333, std: 0.021383882884598433, min: 0.5296500000000001, max: 0.6372
+wall clock time for iteration 170: 485.1728148460388s
+=== Generation 170 finished ===
+
+
+
+=== Generation 171 ===
+Mean reward: 0.6110066666666665, std: 0.018622691057476687, min: 0.5744, max: 0.6474
+wall clock time for iteration 171: 482.5527374744415s
+=== Generation 171 finished ===
+
+
+
+=== Generation 172 ===
+Mean reward: 0.6151666666666668, std: 0.01681208064326231, min: 0.5826, max: 0.642
+wall clock time for iteration 172: 483.0256471633911s
+=== Generation 172 finished ===
+
+
+
+=== Generation 173 ===
+Mean reward: 0.6043383333333333, std: 0.01860904656044713, min: 0.55695, max: 0.6372
+wall clock time for iteration 173: 484.96246218681335s
+=== Generation 173 finished ===
+
+
+
+=== Generation 174 ===
+Mean reward: 0.6071483333333332, std: 0.03811934216670353, min: 0.47454999999999997, max: 0.6367999999999999
+wall clock time for iteration 174: 487.91643500328064s
+=== Generation 174 finished ===
+
+
+
+=== Generation 175 ===
+Mean reward: 0.6067833333333333, std: 0.015099472029033187, min: 0.575, max: 0.6419999999999999
+wall clock time for iteration 175: 488.00147008895874s
+=== Generation 175 finished ===
+
+
+
+=== Generation 176 ===
+Mean reward: 0.6141783333333333, std: 0.01308917926719966, min: 0.589, max: 0.637
+wall clock time for iteration 176: 486.671763420105s
+=== Generation 176 finished ===
+
+
+
+=== Generation 177 ===
+Mean reward: 0.6134716666666665, std: 0.01768350306233342, min: 0.5446, max: 0.6424
+wall clock time for iteration 177: 485.0379090309143s
+=== Generation 177 finished ===
+
+
+
+=== Generation 178 ===
+Mean reward: 0.6129700000000001, std: 0.02321684589545561, min: 0.5367999999999999, max: 0.653
+wall clock time for iteration 178: 483.39125537872314s
+=== Generation 178 finished ===
+
+
+
+=== Generation 179 ===
+Mean reward: 0.6124183333333332, std: 0.020718278899453883, min: 0.5539999999999999, max: 0.64255
+wall clock time for iteration 179: 483.7720272541046s
+=== Generation 179 finished ===
+
+
+
+=== Generation 180 ===
+Mean reward: 0.6137566666666666, std: 0.01925500685247577, min: 0.564, max: 0.6522
+wall clock time for iteration 180: 495.1683466434479s
+=== Generation 180 finished ===
+
+
+
+=== Generation 181 ===
+Mean reward: 0.6219633333333334, std: 0.02005701428982443, min: 0.5692, max: 0.6581
+wall clock time for iteration 181: 488.8770275115967s
+=== Generation 181 finished ===
+
+
+
+=== Generation 182 ===
+Mean reward: 0.6111716666666667, std: 0.02257977222845458, min: 0.5583, max: 0.6526
+wall clock time for iteration 182: 483.75116872787476s
+=== Generation 182 finished ===
+
+
+
+=== Generation 183 ===
+Mean reward: 0.6081966666666665, std: 0.02237158515220193, min: 0.5514, max: 0.64735
+wall clock time for iteration 183: 480.8148009777069s
+=== Generation 183 finished ===
+
+
+
+=== Generation 184 ===
+Mean reward: 0.6180083333333334, std: 0.01730155139158208, min: 0.5806, max: 0.6524
+wall clock time for iteration 184: 481.23170924186707s
+=== Generation 184 finished ===
+
+
+
+=== Generation 185 ===
+Mean reward: 0.6169950000000001, std: 0.0226731755973147, min: 0.5543499999999999, max: 0.648
+wall clock time for iteration 185: 479.53378677368164s
+=== Generation 185 finished ===
+
+
+
+=== Generation 186 ===
+Mean reward: 0.588085, std: 0.09579471118838798, min: 0.1934, max: 0.6417999999999999
+wall clock time for iteration 186: 471.01974606513977s
+=== Generation 186 finished ===
+
+
+
+=== Generation 187 ===
+Mean reward: 0.6181916666666666, std: 0.01755808020700316, min: 0.5801999999999999, max: 0.6628000000000001
+wall clock time for iteration 187: 479.3051676750183s
+=== Generation 187 finished ===
+
+
+
+=== Generation 188 ===
+Mean reward: 0.6130399999999998, std: 0.017525873254515264, min: 0.5633499999999999, max: 0.6469999999999999
+wall clock time for iteration 188: 482.288925409317s
+=== Generation 188 finished ===
+
+
+
+=== Generation 189 ===
+Mean reward: 0.6130566666666667, std: 0.034352946824916714, min: 0.4464, max: 0.6524
+wall clock time for iteration 189: 481.09014081954956s
+=== Generation 189 finished ===
+
+
+
+=== Generation 190 ===
+Mean reward: 0.6153183333333332, std: 0.01971827191267586, min: 0.5685, max: 0.653
+wall clock time for iteration 190: 478.3078508377075s
+=== Generation 190 finished ===
+
+
+
+=== Generation 191 ===
+Mean reward: 0.6210016666666666, std: 0.01129689104232762, min: 0.5962, max: 0.6426
+wall clock time for iteration 191: 481.6693456172943s
+=== Generation 191 finished ===
+
+
+
+=== Generation 192 ===
+Mean reward: 0.6212333333333333, std: 0.014613283530937032, min: 0.5854, max: 0.6514500000000001
+wall clock time for iteration 192: 482.9973113536835s
+=== Generation 192 finished ===
+
+
+
+=== Generation 193 ===
+Mean reward: 0.6157733333333334, std: 0.024568827584744234, min: 0.5611999999999999, max: 0.65655
+wall clock time for iteration 193: 473.40278339385986s
+=== Generation 193 finished ===
+
+
+
+=== Generation 194 ===
+Mean reward: 0.5935133333333333, std: 0.0959491479320629, min: 0.11485, max: 0.6478
+wall clock time for iteration 194: 479.33374285697937s
+=== Generation 194 finished ===
+
+
+
+=== Generation 195 ===
+Mean reward: 0.6186483333333332, std: 0.015903267396635477, min: 0.5917, max: 0.67165
+wall clock time for iteration 195: 485.9612817764282s
+=== Generation 195 finished ===
+
+
+
+=== Generation 196 ===
+Mean reward: 0.6169433333333335, std: 0.029093334670027473, min: 0.48095, max: 0.6676000000000001
+wall clock time for iteration 196: 479.7369694709778s
+=== Generation 196 finished ===
+
+
+
+=== Generation 197 ===
+Mean reward: 0.618255, std: 0.01568485123720761, min: 0.57675, max: 0.6472
+wall clock time for iteration 197: 475.369277715683s
+=== Generation 197 finished ===
+
+
+
+=== Generation 198 ===
+Mean reward: 0.6246066666666668, std: 0.014122864046959059, min: 0.5854, max: 0.6521999999999999
+wall clock time for iteration 198: 478.48747158050537s
+=== Generation 198 finished ===
+
+
+
+=== Generation 199 ===
+Mean reward: 0.6217050000000001, std: 0.01335853254166288, min: 0.59325, max: 0.6474
+wall clock time for iteration 199: 481.5706708431244s
+=== Generation 199 finished ===
+
+
+
+=== Generation 200 ===
+Mean reward: 0.612835, std: 0.02294523243871516, min: 0.535, max: 0.647
+wall clock time for iteration 200: 485.09313917160034s
+=== Generation 200 finished ===
+
+
+
+=== Generation 201 ===
+Mean reward: 0.6064583333333332, std: 0.06717033457726872, min: 0.25975000000000004, max: 0.6528
+wall clock time for iteration 201: 477.19145679473877s
+=== Generation 201 finished ===
+
+
+
+=== Generation 202 ===
+Mean reward: 0.6191916666666665, std: 0.040884057779965476, min: 0.42305, max: 0.6723499999999999
+wall clock time for iteration 202: 489.47167015075684s
+=== Generation 202 finished ===
+
+
+
+=== Generation 203 ===
+Mean reward: 0.6232366666666667, std: 0.015474268605943507, min: 0.5931, max: 0.6526
+wall clock time for iteration 203: 494.4016239643097s
+=== Generation 203 finished ===
+
+
+
+=== Generation 204 ===
+Mean reward: 0.6035599999999999, std: 0.1148242877908096, min: 0.0, max: 0.6628000000000001
+wall clock time for iteration 204: 493.032719373703s
+=== Generation 204 finished ===
+
+
+
+=== Generation 205 ===
+Mean reward: 0.613365, std: 0.03508160997350795, min: 0.44630000000000003, max: 0.6578
+wall clock time for iteration 205: 482.24374508857727s
+=== Generation 205 finished ===
+
+
+
+=== Generation 206 ===
+Mean reward: 0.6175, std: 0.02808059234892787, min: 0.49544999999999995, max: 0.6729999999999999
+wall clock time for iteration 206: 481.62712383270264s
+=== Generation 206 finished ===
+
+
+
+=== Generation 207 ===
+Mean reward: 0.6248166666666667, std: 0.019353330175680066, min: 0.5748000000000001, max: 0.66295
+wall clock time for iteration 207: 484.94249272346497s
+=== Generation 207 finished ===
+
+
+
+=== Generation 208 ===
+Mean reward: 0.620915, std: 0.018300720158871697, min: 0.5746, max: 0.6684
+wall clock time for iteration 208: 481.85950207710266s
+=== Generation 208 finished ===
+
+
+
+=== Generation 209 ===
+Mean reward: 0.6152283333333333, std: 0.025016340271021963, min: 0.53565, max: 0.6572
+wall clock time for iteration 209: 478.2780284881592s
+=== Generation 209 finished ===
+
+
+
+=== Generation 210 ===
+Mean reward: 0.6259949999999999, std: 0.015505076319278997, min: 0.5994999999999999, max: 0.6563999999999999
+wall clock time for iteration 210: 479.0132899284363s
+=== Generation 210 finished ===
+
+
+
+=== Generation 211 ===
+Mean reward: 0.621835, std: 0.01474983135496809, min: 0.5948, max: 0.6562
+wall clock time for iteration 211: 484.78691053390503s
+=== Generation 211 finished ===
+
+
+
+=== Generation 212 ===
+Mean reward: 0.6238649999999999, std: 0.029848973042077453, min: 0.47454999999999997, max: 0.6478
+wall clock time for iteration 212: 484.0292811393738s
+=== Generation 212 finished ===
+
+
+
+=== Generation 213 ===
+Mean reward: 0.6236566666666667, std: 0.014819040304809086, min: 0.5795999999999999, max: 0.6578
+wall clock time for iteration 213: 481.85114073753357s
+=== Generation 213 finished ===
+
+
+
+=== Generation 214 ===
+Mean reward: 0.6211383333333333, std: 0.023285144346175356, min: 0.5478000000000001, max: 0.6574000000000001
+wall clock time for iteration 214: 483.43371295928955s
+=== Generation 214 finished ===
+
+
+
+=== Generation 215 ===
+Mean reward: 0.6260133333333332, std: 0.025716149055063062, min: 0.5482, max: 0.6733499999999999
+wall clock time for iteration 215: 480.40395641326904s
+=== Generation 215 finished ===
+
+
+
+=== Generation 216 ===
+Mean reward: 0.62386, std: 0.020609675721207577, min: 0.5677500000000001, max: 0.6576
+wall clock time for iteration 216: 478.07678413391113s
+=== Generation 216 finished ===
+
+
+
+=== Generation 217 ===
+Mean reward: 0.6218066666666666, std: 0.017777756388876027, min: 0.5732499999999999, max: 0.6578
+wall clock time for iteration 217: 483.3639123439789s
+=== Generation 217 finished ===
+
+
+
+=== Generation 218 ===
+Mean reward: 0.6326799999999999, std: 0.013460000000000005, min: 0.6073000000000001, max: 0.6628000000000001
+wall clock time for iteration 218: 483.62133598327637s
+=== Generation 218 finished ===
+
+
+
+=== Generation 219 ===
+Mean reward: 0.6256133333333334, std: 0.016782510406835927, min: 0.5853499999999999, max: 0.6629999999999999
+wall clock time for iteration 219: 481.6922855377197s
+=== Generation 219 finished ===
+
+
+
+=== Generation 220 ===
+Mean reward: 0.6246583333333332, std: 0.025805128958320565, min: 0.5098, max: 0.6579999999999999
+wall clock time for iteration 220: 485.85358786582947s
+=== Generation 220 finished ===
+
+
+
+=== Generation 221 ===
+Mean reward: 0.6253583333333333, std: 0.017994096639978606, min: 0.5773999999999999, max: 0.6528
+wall clock time for iteration 221: 482.79653763771057s
+=== Generation 221 finished ===
+
+
+
+=== Generation 222 ===
+Mean reward: 0.6271383333333332, std: 0.01759738466995089, min: 0.591, max: 0.6674000000000001
+wall clock time for iteration 222: 483.16977882385254s
+=== Generation 222 finished ===
+
+
+
+=== Generation 223 ===
+Mean reward: 0.6250383333333333, std: 0.019476685563913455, min: 0.5874, max: 0.6616
+wall clock time for iteration 223: 472.2424726486206s
+=== Generation 223 finished ===
+
+
+
+=== Generation 224 ===
+Mean reward: 0.6282099999999999, std: 0.019304500338867433, min: 0.59465, max: 0.67785
+wall clock time for iteration 224: 481.0724034309387s
+=== Generation 224 finished ===
+
+
+
+=== Generation 225 ===
+Mean reward: 0.6251983333333333, std: 0.030615547475461254, min: 0.4869, max: 0.6576000000000001
+wall clock time for iteration 225: 480.1941466331482s
+=== Generation 225 finished ===
+
+
+
+=== Generation 226 ===
+Mean reward: 0.62407, std: 0.01970858357839716, min: 0.57845, max: 0.6627
+wall clock time for iteration 226: 475.1795587539673s
+=== Generation 226 finished ===
+
+
+
+=== Generation 227 ===
+Mean reward: 0.6252383333333333, std: 0.02579114409809865, min: 0.52765, max: 0.6619499999999999
+wall clock time for iteration 227: 471.0519189834595s
+=== Generation 227 finished ===
+
+
+
+=== Generation 228 ===
+Mean reward: 0.6241816666666667, std: 0.04086604230762858, min: 0.4212, max: 0.6571000000000001
+wall clock time for iteration 228: 479.98412919044495s
+=== Generation 228 finished ===
+
+
+
+=== Generation 229 ===
+Mean reward: 0.6268100000000001, std: 0.01690409417863022, min: 0.5849, max: 0.6572
+wall clock time for iteration 229: 477.3350398540497s
+=== Generation 229 finished ===
+
+
+
+=== Generation 230 ===
+Mean reward: 0.6280966666666666, std: 0.01461827015149954, min: 0.5993999999999999, max: 0.6507999999999999
+wall clock time for iteration 230: 470.3975045681s
+=== Generation 230 finished ===
+
+
+
+=== Generation 231 ===
+Mean reward: 0.6306766666666666, std: 0.01811742132742833, min: 0.5925, max: 0.6833999999999999
+wall clock time for iteration 231: 470.35504245758057s
+=== Generation 231 finished ===
+
+
+
+=== Generation 232 ===
+Mean reward: 0.6336899999999999, std: 0.012948786300911235, min: 0.6057, max: 0.6576
+wall clock time for iteration 232: 472.1887526512146s
+=== Generation 232 finished ===
+
+
+
+=== Generation 233 ===
+Mean reward: 0.6162083333333332, std: 0.055857794268620704, min: 0.3918, max: 0.6660499999999999
+wall clock time for iteration 233: 475.4830741882324s
+=== Generation 233 finished ===
+
+
+
+=== Generation 234 ===
+Mean reward: 0.6255416666666668, std: 0.04121813735750588, min: 0.43015000000000003, max: 0.6628000000000001
+wall clock time for iteration 234: 476.7427079677582s
+=== Generation 234 finished ===
+
+
+
+=== Generation 235 ===
+Mean reward: 0.6295666666666667, std: 0.015092163161352609, min: 0.6004999999999999, max: 0.6681999999999999
+wall clock time for iteration 235: 471.6865065097809s
+=== Generation 235 finished ===
+
+
+
+=== Generation 236 ===
+Mean reward: 0.6260916666666668, std: 0.0228105899504789, min: 0.5408499999999999, max: 0.6613499999999999
+wall clock time for iteration 236: 471.433655500412s
+=== Generation 236 finished ===
+
+
+
+=== Generation 237 ===
+Mean reward: 0.6304449999999999, std: 0.014774670611105559, min: 0.5908, max: 0.6574
+wall clock time for iteration 237: 468.8019952774048s
+=== Generation 237 finished ===
+
+
+
+=== Generation 238 ===
+Mean reward: 0.63072, std: 0.016554700238904964, min: 0.5968, max: 0.6622
+wall clock time for iteration 238: 471.81803607940674s
+=== Generation 238 finished ===
+
+
+
+=== Generation 239 ===
+Mean reward: 0.623, std: 0.02808938708243144, min: 0.5096, max: 0.6574
+wall clock time for iteration 239: 478.99387288093567s
+=== Generation 239 finished ===
+
+
+
+=== Generation 240 ===
+Mean reward: 0.6306866666666667, std: 0.013329346904064333, min: 0.59625, max: 0.6524000000000001
+wall clock time for iteration 240: 476.7939851284027s
+=== Generation 240 finished ===
+
+
+
+=== Generation 241 ===
+Mean reward: 0.63341, std: 0.016392205464793308, min: 0.59515, max: 0.6663999999999999
+wall clock time for iteration 241: 497.5496346950531s
+=== Generation 241 finished ===
+
+
+
+=== Generation 242 ===
+Mean reward: 0.6270433333333332, std: 0.044038556465392405, min: 0.40285, max: 0.66065
+wall clock time for iteration 242: 503.5241856575012s
+=== Generation 242 finished ===
+
+
+
+=== Generation 243 ===
+Mean reward: 0.6307849999999999, std: 0.026777198478058418, min: 0.5274, max: 0.665
+wall clock time for iteration 243: 478.00355887413025s
+=== Generation 243 finished ===
+
+
+
+=== Generation 244 ===
+Mean reward: 0.62727, std: 0.02303565931333418, min: 0.5756, max: 0.6734
+wall clock time for iteration 244: 478.66811633110046s
+=== Generation 244 finished ===
+
+
+
+=== Generation 245 ===
+Mean reward: 0.63373, std: 0.012779525291131385, min: 0.6109, max: 0.6629999999999999
+wall clock time for iteration 245: 478.4306802749634s
+=== Generation 245 finished ===
+
+
+
+=== Generation 246 ===
+Mean reward: 0.6399199999999999, std: 0.017701043283754016, min: 0.6041500000000001, max: 0.6786
+wall clock time for iteration 246: 480.6197090148926s
+=== Generation 246 finished ===
+
+
+
+=== Generation 247 ===
+Mean reward: 0.6317249999999998, std: 0.02831756448449147, min: 0.5124500000000001, max: 0.6678999999999999
+wall clock time for iteration 247: 478.350448846817s
+=== Generation 247 finished ===
+
+
+
+=== Generation 248 ===
+Mean reward: 0.6310666666666667, std: 0.018990384994049536, min: 0.582, max: 0.6776499999999999
+wall clock time for iteration 248: 482.97865557670593s
+=== Generation 248 finished ===
+
+
+
+=== Generation 249 ===
+Mean reward: 0.6317233333333333, std: 0.01617076958245616, min: 0.6003999999999999, max: 0.6622
+wall clock time for iteration 249: 478.3414444923401s
+=== Generation 249 finished ===
+
+
+
+=== Generation 250 ===
+Mean reward: 0.6393816666666666, std: 0.017698316696479595, min: 0.5855, max: 0.6781999999999999
+wall clock time for iteration 250: 477.58557772636414s
+=== Generation 250 finished ===
+
+
+
+=== Generation 251 ===
+Mean reward: 0.6388833333333334, std: 0.018856065926439215, min: 0.5849, max: 0.6786
+wall clock time for iteration 251: 480.6320939064026s
+=== Generation 251 finished ===
+
+
+
+=== Generation 252 ===
+Mean reward: 0.6361649999999999, std: 0.016565502054973535, min: 0.6046, max: 0.6627999999999998
+wall clock time for iteration 252: 483.16400480270386s
+=== Generation 252 finished ===
+
+
+
+=== Generation 253 ===
+Mean reward: 0.6297250000000001, std: 0.02956634841053817, min: 0.52655, max: 0.6810499999999999
+wall clock time for iteration 253: 479.4214417934418s
+=== Generation 253 finished ===
+
+
+
+=== Generation 254 ===
+Mean reward: 0.6404866666666666, std: 0.019600998840762072, min: 0.5873999999999999, max: 0.6734
+wall clock time for iteration 254: 482.5939040184021s
+=== Generation 254 finished ===
+
+
+
+=== Generation 255 ===
+Mean reward: 0.6395299999999999, std: 0.011290243575760433, min: 0.6112, max: 0.6576
+wall clock time for iteration 255: 478.64120507240295s
+=== Generation 255 finished ===
+
+
+
+=== Generation 256 ===
+Mean reward: 0.6338283333333332, std: 0.024683623732255255, min: 0.5313, max: 0.6731999999999999
+wall clock time for iteration 256: 480.95796632766724s
+=== Generation 256 finished ===
+
+
+
+=== Generation 257 ===
+Mean reward: 0.6402216666666667, std: 0.02119408991257285, min: 0.5836999999999999, max: 0.6788
+wall clock time for iteration 257: 478.3937637805939s
+=== Generation 257 finished ===
+
+
+
+=== Generation 258 ===
+Mean reward: 0.6342633333333334, std: 0.016727766006121556, min: 0.5888, max: 0.667
+wall clock time for iteration 258: 478.07087755203247s
+=== Generation 258 finished ===
+
+
+
+=== Generation 259 ===
+Mean reward: 0.6409033333333333, std: 0.021245336481736935, min: 0.58385, max: 0.6838
+wall clock time for iteration 259: 474.20759177207947s
+=== Generation 259 finished ===
+
+
+
+=== Generation 260 ===
+Mean reward: 0.6405816666666665, std: 0.016219764092680947, min: 0.60055, max: 0.679
+wall clock time for iteration 260: 475.6594023704529s
+=== Generation 260 finished ===
+
+
+
+=== Generation 261 ===
+Mean reward: 0.6365766666666666, std: 0.020769106598235963, min: 0.5902, max: 0.684
+wall clock time for iteration 261: 467.79948472976685s
+=== Generation 261 finished ===
+
+
+
+=== Generation 262 ===
+Mean reward: 0.6399066666666667, std: 0.01769031153547676, min: 0.5894499999999999, max: 0.6683999999999999
+wall clock time for iteration 262: 466.47812366485596s
+=== Generation 262 finished ===
+
+
+
+=== Generation 263 ===
+Mean reward: 0.63276, std: 0.03929652741231297, min: 0.4966000000000001, max: 0.6728000000000001
+wall clock time for iteration 263: 467.65296745300293s
+=== Generation 263 finished ===
+
+
+
+=== Generation 264 ===
+Mean reward: 0.6370349999999999, std: 0.02636668715759845, min: 0.5297, max: 0.6681999999999999
+wall clock time for iteration 264: 473.315354347229s
+=== Generation 264 finished ===
+
+
+
+=== Generation 265 ===
+Mean reward: 0.6428766666666667, std: 0.01663095874833707, min: 0.6084499999999999, max: 0.6734
+wall clock time for iteration 265: 477.80713987350464s
+=== Generation 265 finished ===
+
+
+
+=== Generation 266 ===
+Mean reward: 0.6412433333333333, std: 0.015451751428955282, min: 0.6, max: 0.6675999999999999
+wall clock time for iteration 266: 469.781907081604s
+=== Generation 266 finished ===
+
+
+
+=== Generation 267 ===
+Mean reward: 0.6429000000000001, std: 0.01666069226252819, min: 0.60765, max: 0.6734
+wall clock time for iteration 267: 466.04350662231445s
+=== Generation 267 finished ===
+
+
+
+=== Generation 268 ===
+Mean reward: 0.6425866666666668, std: 0.015618781073509624, min: 0.6147999999999999, max: 0.6684
+wall clock time for iteration 268: 467.40055680274963s
+=== Generation 268 finished ===
+
+
+
+=== Generation 269 ===
+Mean reward: 0.6410849999999999, std: 0.016815162552490128, min: 0.5751999999999999, max: 0.6675999999999999
+wall clock time for iteration 269: 470.39823150634766s
+=== Generation 269 finished ===
+
+
+
+=== Generation 270 ===
+Mean reward: 0.6452550000000001, std: 0.016543041588535038, min: 0.6076, max: 0.6784
+wall clock time for iteration 270: 473.8328015804291s
+=== Generation 270 finished ===
+
+
+
+=== Generation 271 ===
+Mean reward: 0.6434166666666667, std: 0.016954760065801273, min: 0.5860499999999998, max: 0.6725999999999999
+wall clock time for iteration 271: 472.8968951702118s
+=== Generation 271 finished ===
+
+
+
+=== Generation 272 ===
+Mean reward: 0.6500900000000001, std: 0.017176628501154305, min: 0.6143500000000001, max: 0.6836
+wall clock time for iteration 272: 477.74492168426514s
+=== Generation 272 finished ===
+
+
+
+=== Generation 273 ===
+Mean reward: 0.6390966666666668, std: 0.03888142215620317, min: 0.4565000000000001, max: 0.6859999999999999
+wall clock time for iteration 273: 475.5364942550659s
+=== Generation 273 finished ===
+
+
+
+=== Generation 274 ===
+Mean reward: 0.6346266666666666, std: 0.02645215723192007, min: 0.5226000000000001, max: 0.6631999999999999
+wall clock time for iteration 274: 472.06214237213135s
+=== Generation 274 finished ===
+
+
+
+=== Generation 275 ===
+Mean reward: 0.6467533333333333, std: 0.016262364185101994, min: 0.6056, max: 0.6686
+wall clock time for iteration 275: 464.9426929950714s
+=== Generation 275 finished ===
+
+
+
+=== Generation 276 ===
+Mean reward: 0.6492249999999999, std: 0.01275175641496757, min: 0.6256, max: 0.6816999999999999
+wall clock time for iteration 276: 469.87417697906494s
+=== Generation 276 finished ===
+
+
+
+=== Generation 277 ===
+Mean reward: 0.6506499999999998, std: 0.015496392053206005, min: 0.6204500000000001, max: 0.694
+wall clock time for iteration 277: 468.7203698158264s
+=== Generation 277 finished ===
+
+
+
+=== Generation 278 ===
+Mean reward: 0.6285683333333334, std: 0.11810142991184408, min: 0.0, max: 0.6892
+wall clock time for iteration 278: 475.8218107223511s
+=== Generation 278 finished ===
+
+
+
+=== Generation 279 ===
+Mean reward: 0.6513916666666667, std: 0.014381267232835301, min: 0.61615, max: 0.6774000000000001
+wall clock time for iteration 279: 470.46608901023865s
+=== Generation 279 finished ===
+
+
+
+=== Generation 280 ===
+Mean reward: 0.6587416666666666, std: 0.013832456297499077, min: 0.6262, max: 0.6838
+wall clock time for iteration 280: 466.6746485233307s
+=== Generation 280 finished ===
+
+
+
+=== Generation 281 ===
+Mean reward: 0.6547483333333332, std: 0.014734101507123601, min: 0.6264, max: 0.6781999999999999
+wall clock time for iteration 281: 470.24518847465515s
+=== Generation 281 finished ===
+
+
+
+=== Generation 282 ===
+Mean reward: 0.6539499999999999, std: 0.01229655100695582, min: 0.6303, max: 0.6894
+wall clock time for iteration 282: 469.948442697525s
+=== Generation 282 finished ===
+
+
+
+=== Generation 283 ===
+Mean reward: 0.6558916666666667, std: 0.014875337998027299, min: 0.6186, max: 0.6883999999999999
+wall clock time for iteration 283: 461.92447423934937s
+=== Generation 283 finished ===
+
+
+
+=== Generation 284 ===
+Mean reward: 0.6476283333333335, std: 0.019633104200700278, min: 0.6112000000000001, max: 0.6838
+wall clock time for iteration 284: 469.0320191383362s
+=== Generation 284 finished ===
+
+
+
+=== Generation 285 ===
+Mean reward: 0.656675, std: 0.015322520190882436, min: 0.6258, max: 0.688
+wall clock time for iteration 285: 468.26478266716003s
+=== Generation 285 finished ===
+
+
+
+=== Generation 286 ===
+Mean reward: 0.6512116666666666, std: 0.019398349084966526, min: 0.585, max: 0.6791999999999999
+wall clock time for iteration 286: 472.63957262039185s
+=== Generation 286 finished ===
+
+
+
+=== Generation 287 ===
+Mean reward: 0.6519583333333333, std: 0.019895644763504267, min: 0.60595, max: 0.6890000000000001
+wall clock time for iteration 287: 464.2027838230133s
+=== Generation 287 finished ===
+
+
+
+=== Generation 288 ===
+Mean reward: 0.65222, std: 0.019742005132880158, min: 0.6114, max: 0.69935
+wall clock time for iteration 288: 465.39569067955017s
+=== Generation 288 finished ===
+
+
+
+=== Generation 289 ===
+Mean reward: 0.6489566666666667, std: 0.01700301803275588, min: 0.6066499999999999, max: 0.6727999999999998
+wall clock time for iteration 289: 466.34238862991333s
+=== Generation 289 finished ===
+
+
+
+=== Generation 290 ===
+Mean reward: 0.6496000000000001, std: 0.018194912292543025, min: 0.6005999999999999, max: 0.6835999999999999
+wall clock time for iteration 290: 467.6135709285736s
+=== Generation 290 finished ===
+
+
+
+=== Generation 291 ===
+Mean reward: 0.6409566666666665, std: 0.04906870308274124, min: 0.3925, max: 0.6884
+wall clock time for iteration 291: 472.1337649822235s
+=== Generation 291 finished ===
+
+
+
+=== Generation 292 ===
+Mean reward: 0.6510816666666666, std: 0.016409984172922158, min: 0.6005999999999999, max: 0.6781999999999999
+wall clock time for iteration 292: 474.6044008731842s
+=== Generation 292 finished ===
+
+
+
+=== Generation 293 ===
+Mean reward: 0.6484500000000001, std: 0.021476328053619057, min: 0.5739000000000002, max: 0.6785999999999999
+wall clock time for iteration 293: 466.52386808395386s
+=== Generation 293 finished ===
+
+
+
+=== Generation 294 ===
+Mean reward: 0.6485433333333332, std: 0.01805894853589827, min: 0.6105999999999999, max: 0.6785999999999999
+wall clock time for iteration 294: 473.4859743118286s
+=== Generation 294 finished ===
+
+
+
+=== Generation 295 ===
+Mean reward: 0.6570616666666667, std: 0.01657016235754965, min: 0.6114, max: 0.6884
+wall clock time for iteration 295: 469.79440569877625s
+=== Generation 295 finished ===
+
+
+
+=== Generation 296 ===
+Mean reward: 0.6459050000000001, std: 0.019129302783949004, min: 0.5830500000000001, max: 0.6736
+wall clock time for iteration 296: 467.5543348789215s
+=== Generation 296 finished ===
+
+
+
+=== Generation 297 ===
+Mean reward: 0.6540583333333332, std: 0.01272147189684519, min: 0.6242, max: 0.6734
+wall clock time for iteration 297: 466.70707535743713s
+=== Generation 297 finished ===
+
+
+
+=== Generation 298 ===
+Mean reward: 0.6522833333333333, std: 0.014308594930631352, min: 0.6264, max: 0.6938
+wall clock time for iteration 298: 469.30315470695496s
+=== Generation 298 finished ===
+
+
+
+=== Generation 299 ===
+Mean reward: 0.6468416666666666, std: 0.05744646070231151, min: 0.34900000000000003, max: 0.6991999999999998
+wall clock time for iteration 299: 472.084463596344s
+=== Generation 299 finished ===
+
+
+
+=== Generation 300 ===
+Mean reward: 0.6613983333333334, std: 0.017530114485903654, min: 0.6265999999999999, max: 0.7044
+wall clock time for iteration 300: 464.6486508846283s
+=== Generation 300 finished ===
+
+
+
+=== Generation 301 ===
+Mean reward: 0.6517316666666668, std: 0.019960329336517008, min: 0.60455, max: 0.6923999999999999
+wall clock time for iteration 301: 469.15779280662537s
+=== Generation 301 finished ===
+
+
+
+=== Generation 302 ===
+Mean reward: 0.6455916666666665, std: 0.05964748120322339, min: 0.33774999999999994, max: 0.6888
+wall clock time for iteration 302: 462.4444408416748s
+=== Generation 302 finished ===
+
+
+
+=== Generation 303 ===
+Mean reward: 0.6555216666666666, std: 0.019054613104326077, min: 0.5875, max: 0.6788
+wall clock time for iteration 303: 461.7305123806s
+=== Generation 303 finished ===
+
+
+
+=== Generation 304 ===
+Mean reward: 0.6576083333333335, std: 0.019054317460588513, min: 0.6144, max: 0.6891999999999999
+wall clock time for iteration 304: 466.96436381340027s
+=== Generation 304 finished ===
+
+
+
+=== Generation 305 ===
+Mean reward: 0.6596333333333332, std: 0.024174826208728413, min: 0.5801999999999999, max: 0.6941999999999999
+wall clock time for iteration 305: 467.8752410411835s
+=== Generation 305 finished ===
+
+
+
+=== Generation 306 ===
+Mean reward: 0.6551783333333333, std: 0.012102029329368222, min: 0.6282, max: 0.6838
+wall clock time for iteration 306: 464.61124777793884s
+=== Generation 306 finished ===
+
+
+
+=== Generation 307 ===
+Mean reward: 0.6650316666666666, std: 0.014154342580596545, min: 0.6374, max: 0.6923999999999999
+wall clock time for iteration 307: 464.9214472770691s
+=== Generation 307 finished ===
+
+
+
+=== Generation 308 ===
+Mean reward: 0.6616283333333333, std: 0.014546601454940907, min: 0.6262, max: 0.684
+wall clock time for iteration 308: 462.5615677833557s
+=== Generation 308 finished ===
+
+
+
+=== Generation 309 ===
+Mean reward: 0.6599433333333333, std: 0.01579276064812257, min: 0.60475, max: 0.6890000000000001
+wall clock time for iteration 309: 461.37251234054565s
+=== Generation 309 finished ===
+
+
+
+=== Generation 310 ===
+Mean reward: 0.6554716666666668, std: 0.019357568215615854, min: 0.59455, max: 0.6885999999999999
+wall clock time for iteration 310: 462.9257740974426s
+=== Generation 310 finished ===
+
+
+
+=== Generation 311 ===
+Mean reward: 0.6632283333333332, std: 0.018211295411242858, min: 0.6165999999999999, max: 0.7154
+wall clock time for iteration 311: 461.56190276145935s
+=== Generation 311 finished ===
+
+
+
+=== Generation 312 ===
+Mean reward: 0.6604749999999999, std: 0.01559039634946248, min: 0.6242, max: 0.6885999999999999
+wall clock time for iteration 312: 461.7388541698456s
+=== Generation 312 finished ===
+
+
+
+=== Generation 313 ===
+Mean reward: 0.66492, std: 0.01615227847704464, min: 0.6222, max: 0.6888
+wall clock time for iteration 313: 456.69988656044006s
+=== Generation 313 finished ===
+
+
+
+=== Generation 314 ===
+Mean reward: 0.66225, std: 0.01519997258769457, min: 0.6311999999999999, max: 0.6923999999999999
+wall clock time for iteration 314: 460.2064950466156s
+=== Generation 314 finished ===
+
+
+
+=== Generation 315 ===
+Mean reward: 0.6573049999999999, std: 0.018153398901215916, min: 0.6175499999999999, max: 0.6894
+wall clock time for iteration 315: 459.3684821128845s
+=== Generation 315 finished ===
+
+
+
+=== Generation 316 ===
+Mean reward: 0.6537466666666667, std: 0.015592871947000521, min: 0.6215999999999999, max: 0.6844
+wall clock time for iteration 316: 460.0332932472229s
+=== Generation 316 finished ===
+
+
+
+=== Generation 317 ===
+Mean reward: 0.6566516666666666, std: 0.011290515808510346, min: 0.62815, max: 0.6785999999999999
+wall clock time for iteration 317: 456.301127910614s
+=== Generation 317 finished ===
+
+
+
+=== Generation 318 ===
+Mean reward: 0.6592966666666666, std: 0.019252129463747342, min: 0.6267999999999999, max: 0.6944
+wall clock time for iteration 318: 459.1543073654175s
+=== Generation 318 finished ===
+
+
+
+=== Generation 319 ===
+Mean reward: 0.6598366666666667, std: 0.019656588943376973, min: 0.6061999999999999, max: 0.6994
+wall clock time for iteration 319: 457.76792764663696s
+=== Generation 319 finished ===
+
+
+
+=== Generation 320 ===
+Mean reward: 0.6632283333333334, std: 0.014373654623032445, min: 0.637, max: 0.689
+wall clock time for iteration 320: 457.75153279304504s
+=== Generation 320 finished ===
+
+
+
+=== Generation 321 ===
+Mean reward: 0.65717, std: 0.01648395988023913, min: 0.6212, max: 0.689
+wall clock time for iteration 321: 463.25188159942627s
+=== Generation 321 finished ===
+
+
+
+=== Generation 322 ===
+Mean reward: 0.6652233333333333, std: 0.014520185566613428, min: 0.6267999999999999, max: 0.6894
+wall clock time for iteration 322: 456.8799183368683s
+=== Generation 322 finished ===
+
+
+
+=== Generation 323 ===
+Mean reward: 0.6610366666666665, std: 0.019033627843605867, min: 0.621, max: 0.7044
+wall clock time for iteration 323: 454.25442385673523s
+=== Generation 323 finished ===
+
+
+
+=== Generation 324 ===
+Mean reward: 0.658575, std: 0.01789397827017046, min: 0.5969500000000001, max: 0.6841999999999999
+wall clock time for iteration 324: 455.1825182437897s
+=== Generation 324 finished ===
+
+
+
+=== Generation 325 ===
+Mean reward: 0.6640766666666666, std: 0.012966892028889915, min: 0.6275999999999999, max: 0.6891999999999999
+wall clock time for iteration 325: 452.1859927177429s
+=== Generation 325 finished ===
+
+
+
+=== Generation 326 ===
+Mean reward: 0.6673866666666668, std: 0.015213086106667812, min: 0.6267999999999999, max: 0.6942
+wall clock time for iteration 326: 451.49768829345703s
+=== Generation 326 finished ===
+
+
+
+=== Generation 327 ===
+Mean reward: 0.6401433333333332, std: 0.11942528259218069, min: 0.0, max: 0.6839999999999999
+wall clock time for iteration 327: 457.7057330608368s
+=== Generation 327 finished ===
+
+
+
+=== Generation 328 ===
+Mean reward: 0.6578466666666667, std: 0.0182446290422384, min: 0.6111999999999999, max: 0.6995999999999999
+wall clock time for iteration 328: 450.9367048740387s
+=== Generation 328 finished ===
+
+
+
+=== Generation 329 ===
+Mean reward: 0.6681933333333333, std: 0.017369545826596094, min: 0.6274, max: 0.7047999999999999
+wall clock time for iteration 329: 449.857390165329s
+=== Generation 329 finished ===
+
+
+
+=== Generation 330 ===
+Mean reward: 0.6604833333333334, std: 0.017121255470580653, min: 0.5881000000000002, max: 0.684
+wall clock time for iteration 330: 447.5553662776947s
+=== Generation 330 finished ===
+
+
+
+=== Generation 331 ===
+Mean reward: 0.6609783333333332, std: 0.01722414818084062, min: 0.6065999999999999, max: 0.6881999999999999
+wall clock time for iteration 331: 452.7637369632721s
+=== Generation 331 finished ===
+
+
+
+=== Generation 332 ===
+Mean reward: 0.6645833333333334, std: 0.01254459600341472, min: 0.6398499999999999, max: 0.6841999999999999
+wall clock time for iteration 332: 451.5789771080017s
+=== Generation 332 finished ===
+
+
+
+=== Generation 333 ===
+Mean reward: 0.6677799999999999, std: 0.015298085936918162, min: 0.6315999999999999, max: 0.6946000000000001
+wall clock time for iteration 333: 452.4490792751312s
+=== Generation 333 finished ===
+
+
+
+=== Generation 334 ===
+Mean reward: 0.66535, std: 0.016578771566876316, min: 0.60505, max: 0.6936
+wall clock time for iteration 334: 451.20746779441833s
+=== Generation 334 finished ===
+
+
+
+=== Generation 335 ===
+Mean reward: 0.6655483333333332, std: 0.023821144260695985, min: 0.57055, max: 0.6944
+wall clock time for iteration 335: 448.4761576652527s
+=== Generation 335 finished ===
+
+
+
+=== Generation 336 ===
+Mean reward: 0.6652316666666667, std: 0.020499855622797835, min: 0.5952, max: 0.7044
+wall clock time for iteration 336: 450.1983587741852s
+=== Generation 336 finished ===
+
+
+
+=== Generation 337 ===
+Mean reward: 0.665285, std: 0.01584277516724895, min: 0.6367999999999999, max: 0.6994
+wall clock time for iteration 337: 452.4084825515747s
+=== Generation 337 finished ===
+
+
+
+=== Generation 338 ===
+Mean reward: 0.6616116666666666, std: 0.019667230288533823, min: 0.607, max: 0.7034
+wall clock time for iteration 338: 450.5967147350311s
+=== Generation 338 finished ===
+
+
+
+=== Generation 339 ===
+Mean reward: 0.6670050000000001, std: 0.014724895868335815, min: 0.6398499999999999, max: 0.6997999999999999
+wall clock time for iteration 339: 451.62622570991516s
+=== Generation 339 finished ===
+
+
+
+=== Generation 340 ===
+Mean reward: 0.6635133333333332, std: 0.018453811409992103, min: 0.6319999999999999, max: 0.6994
+wall clock time for iteration 340: 450.51714968681335s
+=== Generation 340 finished ===
+
+
+
+=== Generation 341 ===
+Mean reward: 0.6631816666666667, std: 0.016041563116548873, min: 0.6326, max: 0.6931999999999999
+wall clock time for iteration 341: 458.81982803344727s
+=== Generation 341 finished ===
+
+
+
+=== Generation 342 ===
+Mean reward: 0.66296, std: 0.021195952443803973, min: 0.593, max: 0.6944
+wall clock time for iteration 342: 458.9346399307251s
+=== Generation 342 finished ===
+
+
+
+=== Generation 343 ===
+Mean reward: 0.6631333333333332, std: 0.02025076267425226, min: 0.606, max: 0.6986
+wall clock time for iteration 343: 461.46535205841064s
+=== Generation 343 finished ===
+
+
+
+=== Generation 344 ===
+Mean reward: 0.6707566666666668, std: 0.02024800291935532, min: 0.6352, max: 0.71
+wall clock time for iteration 344: 451.1017634868622s
+=== Generation 344 finished ===
+
+
+
+=== Generation 345 ===
+Mean reward: 0.6640983333333332, std: 0.018512250373438906, min: 0.6108, max: 0.7047999999999999
+wall clock time for iteration 345: 453.8565471172333s
+=== Generation 345 finished ===
+
+
+
+=== Generation 346 ===
+Mean reward: 0.6643399999999999, std: 0.01797426586354317, min: 0.6189, max: 0.7044
+wall clock time for iteration 346: 448.6992061138153s
+=== Generation 346 finished ===
+
+
+
+=== Generation 347 ===
+Mean reward: 0.6674883333333332, std: 0.015286462874786364, min: 0.6424, max: 0.7047999999999999
+wall clock time for iteration 347: 452.82101941108704s
+=== Generation 347 finished ===
+
+
+
+=== Generation 348 ===
+Mean reward: 0.6686633333333333, std: 0.017241756162165035, min: 0.6216, max: 0.6994
+wall clock time for iteration 348: 451.3220183849335s
+=== Generation 348 finished ===
+
+
+
+=== Generation 349 ===
+Mean reward: 0.6708816666666667, std: 0.014837489024614493, min: 0.6265999999999999, max: 0.694
+wall clock time for iteration 349: 460.08654832839966s
+=== Generation 349 finished ===
+
+
+
+=== Generation 350 ===
+Mean reward: 0.6752766666666666, std: 0.01633797077022997, min: 0.6454, max: 0.7138
+wall clock time for iteration 350: 460.8818061351776s
+=== Generation 350 finished ===
+
+
+
+=== Generation 351 ===
+Mean reward: 0.6663066666666668, std: 0.016744136950652955, min: 0.6317, max: 0.7045999999999999
+wall clock time for iteration 351: 464.1824049949646s
+=== Generation 351 finished ===
+
+
+
+=== Generation 352 ===
+Mean reward: 0.6715749999999999, std: 0.01320978015209438, min: 0.643, max: 0.6996000000000001
+wall clock time for iteration 352: 459.58903980255127s
+=== Generation 352 finished ===
+
+
+
+=== Generation 353 ===
+Mean reward: 0.6754716666666667, std: 0.01237347757189636, min: 0.6451499999999999, max: 0.6995999999999999
+wall clock time for iteration 353: 463.7753200531006s
+=== Generation 353 finished ===
+
+
+
+=== Generation 354 ===
+Mean reward: 0.6712233333333332, std: 0.01353604898861638, min: 0.6460499999999999, max: 0.705
+wall clock time for iteration 354: 463.9287109375s
+=== Generation 354 finished ===
+
+
+
+=== Generation 355 ===
+Mean reward: 0.675965, std: 0.0154070392461801, min: 0.6476, max: 0.6996000000000001
+wall clock time for iteration 355: 463.1030342578888s
+=== Generation 355 finished ===
+
+
+
+=== Generation 356 ===
+Mean reward: 0.6738, std: 0.017207212635016372, min: 0.648, max: 0.715
+wall clock time for iteration 356: 464.6207985877991s
+=== Generation 356 finished ===
+
+
+
+=== Generation 357 ===
+Mean reward: 0.6710616666666667, std: 0.012381065404703868, min: 0.6474000000000001, max: 0.7034
+wall clock time for iteration 357: 466.93832063674927s
+=== Generation 357 finished ===
+
+
+
+=== Generation 358 ===
+Mean reward: 0.6695366666666666, std: 0.015877467962143375, min: 0.623, max: 0.6988
+wall clock time for iteration 358: 465.3348569869995s
+=== Generation 358 finished ===
+
+
+
+=== Generation 359 ===
+Mean reward: 0.6718766666666666, std: 0.012925915398488743, min: 0.65205, max: 0.7025999999999999
+wall clock time for iteration 359: 462.87904024124146s
+=== Generation 359 finished ===
+
+
+
+=== Generation 360 ===
+Mean reward: 0.6744966666666665, std: 0.014757387603803332, min: 0.6531999999999999, max: 0.7101999999999999
+wall clock time for iteration 360: 461.2108438014984s
+=== Generation 360 finished ===
+
+
+
+=== Generation 361 ===
+Mean reward: 0.6768566666666664, std: 0.014195291081513215, min: 0.647, max: 0.71
+wall clock time for iteration 361: 464.07698488235474s
+=== Generation 361 finished ===
+
+
+
+=== Generation 362 ===
+Mean reward: 0.6769199999999999, std: 0.017331852180306632, min: 0.6268, max: 0.7147999999999999
+wall clock time for iteration 362: 461.4022526741028s
+=== Generation 362 finished ===
+
+
+
+=== Generation 363 ===
+Mean reward: 0.6676150000000001, std: 0.034383586563940645, min: 0.516, max: 0.71
+wall clock time for iteration 363: 464.1907572746277s
+=== Generation 363 finished ===
+
+
+
+=== Generation 364 ===
+Mean reward: 0.6793499999999999, std: 0.01812952931913384, min: 0.6445499999999998, max: 0.71
+wall clock time for iteration 364: 461.57725381851196s
+=== Generation 364 finished ===
+
+
+
+=== Generation 365 ===
+Mean reward: 0.6813783333333333, std: 0.015266230070176297, min: 0.6387, max: 0.71
+wall clock time for iteration 365: 459.4083697795868s
+=== Generation 365 finished ===
+
+
+
+=== Generation 366 ===
+Mean reward: 0.6778650000000002, std: 0.016947478426007807, min: 0.6418, max: 0.7044
+wall clock time for iteration 366: 458.95115780830383s
+=== Generation 366 finished ===
+
+
+
+=== Generation 367 ===
+Mean reward: 0.6740616666666666, std: 0.01583842207699017, min: 0.6416, max: 0.7092
+wall clock time for iteration 367: 459.93982768058777s
+=== Generation 367 finished ===
+
+
+
+=== Generation 368 ===
+Mean reward: 0.6763199999999999, std: 0.015582204593702397, min: 0.6384, max: 0.6994
+wall clock time for iteration 368: 458.2253186702728s
+=== Generation 368 finished ===
+
+
+
+=== Generation 369 ===
+Mean reward: 0.6738416666666668, std: 0.01626430694974598, min: 0.6442, max: 0.7083999999999999
+wall clock time for iteration 369: 457.92895245552063s
+=== Generation 369 finished ===
+
+
+
+=== Generation 370 ===
+Mean reward: 0.6824083333333333, std: 0.015300016793745331, min: 0.643, max: 0.7047999999999999
+wall clock time for iteration 370: 454.9625916481018s
+=== Generation 370 finished ===
+
+
+
+=== Generation 371 ===
+Mean reward: 0.6787333333333335, std: 0.014539144480409494, min: 0.6426, max: 0.71415
+wall clock time for iteration 371: 456.3511052131653s
+=== Generation 371 finished ===
+
+
+
+=== Generation 372 ===
+Mean reward: 0.6766049999999999, std: 0.015791539665276473, min: 0.6417999999999999, max: 0.7143999999999999
+wall clock time for iteration 372: 460.8427541255951s
+=== Generation 372 finished ===
+
+
+
+=== Generation 373 ===
+Mean reward: 0.6856133333333335, std: 0.0132846962914308, min: 0.6626000000000001, max: 0.7191999999999998
+wall clock time for iteration 373: 458.34477186203003s
+=== Generation 373 finished ===
+
+
+
+=== Generation 374 ===
+Mean reward: 0.6659716666666667, std: 0.06326648096653462, min: 0.337, max: 0.6994
+wall clock time for iteration 374: 458.86824083328247s
+=== Generation 374 finished ===
+
+
+
+=== Generation 375 ===
+Mean reward: 0.6747266666666667, std: 0.011130601461236908, min: 0.6526, max: 0.6970000000000001
+wall clock time for iteration 375: 454.1909635066986s
+=== Generation 375 finished ===
+
+
+
+=== Generation 376 ===
+Mean reward: 0.6775033333333333, std: 0.013065105774117914, min: 0.6466, max: 0.7094
+wall clock time for iteration 376: 456.9334874153137s
+=== Generation 376 finished ===
+
+
+
+=== Generation 377 ===
+Mean reward: 0.6784333333333332, std: 0.014685618437399529, min: 0.6519999999999999, max: 0.7097999999999999
+wall clock time for iteration 377: 458.6245439052582s
+=== Generation 377 finished ===
+
+
+
+=== Generation 378 ===
+Mean reward: 0.6818850000000001, std: 0.01657920459491346, min: 0.6356499999999999, max: 0.7053999999999999
+wall clock time for iteration 378: 454.5110173225403s
+=== Generation 378 finished ===
+
+
+
+=== Generation 379 ===
+Mean reward: 0.6825116666666667, std: 0.013422684054324698, min: 0.6512, max: 0.7047999999999999
+wall clock time for iteration 379: 456.2705075740814s
+=== Generation 379 finished ===
+
+
+
+=== Generation 380 ===
+Mean reward: 0.6802433333333334, std: 0.025182340814326395, min: 0.58195, max: 0.7253999999999999
+wall clock time for iteration 380: 459.1929540634155s
+=== Generation 380 finished ===
+
+
+
+=== Generation 381 ===
+Mean reward: 0.6845733333333334, std: 0.015952804002919218, min: 0.6372, max: 0.7147999999999999
+wall clock time for iteration 381: 458.05158162117004s
+=== Generation 381 finished ===
+
+
+
+=== Generation 382 ===
+Mean reward: 0.6795883333333333, std: 0.016219359231760336, min: 0.65095, max: 0.7152
+wall clock time for iteration 382: 460.24262404441833s
+=== Generation 382 finished ===
+
+
+
+=== Generation 383 ===
+Mean reward: 0.6759066666666665, std: 0.018061177210310014, min: 0.6154999999999999, max: 0.7151999999999998
+wall clock time for iteration 383: 462.40852904319763s
+=== Generation 383 finished ===
+
+
+
+=== Generation 384 ===
+Mean reward: 0.6772516666666666, std: 0.01782764932781538, min: 0.6306999999999999, max: 0.7044
+wall clock time for iteration 384: 456.2222125530243s
+=== Generation 384 finished ===
+
+
+
+=== Generation 385 ===
+Mean reward: 0.68285, std: 0.017679564474273667, min: 0.6485999999999998, max: 0.7203999999999999
+wall clock time for iteration 385: 459.3770053386688s
+=== Generation 385 finished ===
+
+
+
+=== Generation 386 ===
+Mean reward: 0.6880683333333333, std: 0.01134863048516821, min: 0.6629999999999999, max: 0.7101999999999998
+wall clock time for iteration 386: 458.2999863624573s
+=== Generation 386 finished ===
+
+
+
+=== Generation 387 ===
+Mean reward: 0.6861733333333332, std: 0.013671842922184605, min: 0.6559999999999999, max: 0.71
+wall clock time for iteration 387: 459.38002920150757s
+=== Generation 387 finished ===
+
+
+
+=== Generation 388 ===
+Mean reward: 0.6784966666666665, std: 0.013720355518555457, min: 0.6476, max: 0.7097999999999999
+wall clock time for iteration 388: 457.00950169563293s
+=== Generation 388 finished ===
+
+
+
+=== Generation 389 ===
+Mean reward: 0.6867933333333334, std: 0.015921828482376724, min: 0.6419999999999999, max: 0.7096000000000001
+wall clock time for iteration 389: 459.700808763504s
+=== Generation 389 finished ===
+
+
+
+=== Generation 390 ===
+Mean reward: 0.684455, std: 0.016533745038556757, min: 0.6416, max: 0.714
+wall clock time for iteration 390: 458.20192790031433s
+=== Generation 390 finished ===
+
+
+
+=== Generation 391 ===
+Mean reward: 0.687185, std: 0.01343493052953134, min: 0.6627999999999998, max: 0.7152
+wall clock time for iteration 391: 456.50509452819824s
+=== Generation 391 finished ===
+
+
+
+=== Generation 392 ===
+Mean reward: 0.6844733333333333, std: 0.01692303033016118, min: 0.6406000000000001, max: 0.7096000000000001
+wall clock time for iteration 392: 454.952623128891s
+=== Generation 392 finished ===
+
+
+
+=== Generation 393 ===
+Mean reward: 0.6851183333333335, std: 0.013662939430769993, min: 0.6534, max: 0.705
+wall clock time for iteration 393: 455.3505380153656s
+=== Generation 393 finished ===
+
+
+
+=== Generation 394 ===
+Mean reward: 0.68691, std: 0.016266373289704143, min: 0.6261999999999999, max: 0.7098
+wall clock time for iteration 394: 457.4204971790314s
+=== Generation 394 finished ===
+
+
+
+=== Generation 395 ===
+Mean reward: 0.68719, std: 0.014078697856454398, min: 0.64645, max: 0.715
+wall clock time for iteration 395: 460.2457230091095s
+=== Generation 395 finished ===
+
+
+
+=== Generation 396 ===
+Mean reward: 0.6866866666666666, std: 0.020574340545662404, min: 0.627, max: 0.72
+wall clock time for iteration 396: 456.4213147163391s
+=== Generation 396 finished ===
+
+
+
+=== Generation 397 ===
+Mean reward: 0.6917616666666667, std: 0.017846865660078468, min: 0.6509999999999999, max: 0.7251999999999998
+wall clock time for iteration 397: 457.78327798843384s
+=== Generation 397 finished ===
+
+
+
+=== Generation 398 ===
+Mean reward: 0.6810666666666666, std: 0.027624850929713396, min: 0.5586000000000001, max: 0.7133999999999999
+wall clock time for iteration 398: 458.51258277893066s
+=== Generation 398 finished ===
+
+
+
+=== Generation 399 ===
+Mean reward: 0.6884549999999998, std: 0.017086063277810155, min: 0.6372, max: 0.7257999999999999
+wall clock time for iteration 399: 457.6388292312622s
+=== Generation 399 finished ===
+
+
+
+=== Generation 400 ===
+Mean reward: 0.6866583333333333, std: 0.01792344406698172, min: 0.6418, max: 0.7152
+wall clock time for iteration 400: 456.4333519935608s
+=== Generation 400 finished ===
+
+
+
+=== Generation 401 ===
+Mean reward: 0.6942683333333334, std: 0.012517131482714229, min: 0.6681999999999999, max: 0.7152
+wall clock time for iteration 401: 452.9100110530853s
+=== Generation 401 finished ===
+
+
+
+=== Generation 402 ===
+Mean reward: 0.6869283333333333, std: 0.021442207921656662, min: 0.63095, max: 0.7153999999999999
+wall clock time for iteration 402: 456.12445068359375s
+=== Generation 402 finished ===
+
+
+
+=== Generation 403 ===
+Mean reward: 0.6900016666666665, std: 0.012559733830336072, min: 0.6619999999999999, max: 0.7180000000000001
+wall clock time for iteration 403: 457.99105525016785s
+=== Generation 403 finished ===
+
+
+
+=== Generation 404 ===
+Mean reward: 0.6881383333333333, std: 0.012105939887326212, min: 0.6628499999999999, max: 0.7101999999999998
+wall clock time for iteration 404: 456.65866446495056s
+=== Generation 404 finished ===
+
+
+
+=== Generation 405 ===
+Mean reward: 0.684595, std: 0.0226340538054204, min: 0.5904, max: 0.7141999999999998
+wall clock time for iteration 405: 457.49914288520813s
+=== Generation 405 finished ===
+
+
+
+=== Generation 406 ===
+Mean reward: 0.686305, std: 0.012116671366344815, min: 0.6584, max: 0.71
+wall clock time for iteration 406: 457.9208776950836s
+=== Generation 406 finished ===
+
+
+
+=== Generation 407 ===
+Mean reward: 0.6890683333333331, std: 0.019883374476068076, min: 0.6297999999999999, max: 0.7305999999999999
+wall clock time for iteration 407: 478.4133462905884s
+=== Generation 407 finished ===
+
+
+
+=== Generation 408 ===
+Mean reward: 0.6901783333333332, std: 0.01653253702719443, min: 0.6399999999999999, max: 0.7253999999999999
+wall clock time for iteration 408: 464.27882266044617s
+=== Generation 408 finished ===
+
+
+
+=== Generation 409 ===
+Mean reward: 0.6875683333333332, std: 0.01715765855885418, min: 0.6472, max: 0.7153999999999999
+wall clock time for iteration 409: 460.0890100002289s
+=== Generation 409 finished ===
+
+
+
+=== Generation 410 ===
+Mean reward: 0.6836099999999999, std: 0.02917283096764291, min: 0.5483500000000001, max: 0.7206
+wall clock time for iteration 410: 455.7196035385132s
+=== Generation 410 finished ===
+
+
+
+=== Generation 411 ===
+Mean reward: 0.6894233333333332, std: 0.02446590053296399, min: 0.5806, max: 0.72
+wall clock time for iteration 411: 457.037166595459s
+=== Generation 411 finished ===
+
+
+
+=== Generation 412 ===
+Mean reward: 0.6874133333333332, std: 0.011818050694688291, min: 0.6629999999999999, max: 0.7091
+wall clock time for iteration 412: 459.6855959892273s
+=== Generation 412 finished ===
+
+
+
+=== Generation 413 ===
+Mean reward: 0.6916633333333334, std: 0.013904519249350388, min: 0.6625999999999999, max: 0.7186
+wall clock time for iteration 413: 456.1435787677765s
+=== Generation 413 finished ===
+
+
+
+=== Generation 414 ===
+Mean reward: 0.6878366666666665, std: 0.015136131899824618, min: 0.665, max: 0.7243999999999999
+wall clock time for iteration 414: 453.66165566444397s
+=== Generation 414 finished ===
+
+
+
+=== Generation 415 ===
+Mean reward: 0.6828033333333334, std: 0.030566811886241736, min: 0.59285, max: 0.7295999999999999
+wall clock time for iteration 415: 453.94340348243713s
+=== Generation 415 finished ===
+
+
+
+=== Generation 416 ===
+Mean reward: 0.69535, std: 0.014919729666898559, min: 0.6644, max: 0.731
+wall clock time for iteration 416: 453.82386684417725s
+=== Generation 416 finished ===
+
+
+
+=== Generation 417 ===
+Mean reward: 0.6890799999999999, std: 0.014479840008324219, min: 0.6629999999999999, max: 0.7203999999999999
+wall clock time for iteration 417: 458.5872232913971s
+=== Generation 417 finished ===
+
+
+
+=== Generation 418 ===
+Mean reward: 0.6880066666666664, std: 0.018897939629023627, min: 0.638, max: 0.7156
+wall clock time for iteration 418: 458.54605197906494s
+=== Generation 418 finished ===
+
+
+
+=== Generation 419 ===
+Mean reward: 0.6856933333333333, std: 0.014860634426415158, min: 0.6472, max: 0.7097999999999999
+wall clock time for iteration 419: 455.97644233703613s
+=== Generation 419 finished ===
+
+
+
+=== Generation 420 ===
+Mean reward: 0.6907933333333334, std: 0.01325457614897168, min: 0.654, max: 0.7101999999999999
+wall clock time for iteration 420: 455.3615732192993s
+=== Generation 420 finished ===
+
+
+
+=== Generation 421 ===
+Mean reward: 0.6945950000000001, std: 0.013240382358527245, min: 0.65155, max: 0.7154
+wall clock time for iteration 421: 463.5727698802948s
+=== Generation 421 finished ===
+
+
+
+=== Generation 422 ===
+Mean reward: 0.6971183333333334, std: 0.013053859476117497, min: 0.6685499999999999, max: 0.7256
+wall clock time for iteration 422: 456.8062393665314s
+=== Generation 422 finished ===
+
+
+
+=== Generation 423 ===
+Mean reward: 0.6888766666666667, std: 0.015505196619914976, min: 0.6579499999999999, max: 0.71845
+wall clock time for iteration 423: 475.89189314842224s
+=== Generation 423 finished ===
+
+
+
+=== Generation 424 ===
+Mean reward: 0.6914683333333331, std: 0.017385144440648793, min: 0.6555999999999998, max: 0.7201999999999998
+wall clock time for iteration 424: 464.67763566970825s
+=== Generation 424 finished ===
+
+
+
+=== Generation 425 ===
+Mean reward: 0.6989066666666666, std: 0.011560476729885402, min: 0.6688, max: 0.7252
+wall clock time for iteration 425: 457.02557468414307s
+=== Generation 425 finished ===
+
+
+
+=== Generation 426 ===
+Mean reward: 0.6937533333333332, std: 0.01649764596002175, min: 0.6478, max: 0.72
+wall clock time for iteration 426: 459.4310646057129s
+=== Generation 426 finished ===
+
+
+
+=== Generation 427 ===
+Mean reward: 0.6921666666666666, std: 0.012213942397477109, min: 0.6576, max: 0.7101999999999998
+wall clock time for iteration 427: 459.8905293941498s
+=== Generation 427 finished ===
+
+
+
+=== Generation 428 ===
+Mean reward: 0.6859216666666667, std: 0.030891011862496324, min: 0.5362, max: 0.7193999999999999
+wall clock time for iteration 428: 456.51698899269104s
+=== Generation 428 finished ===
+
+
+
+=== Generation 429 ===
+Mean reward: 0.6747566666666668, std: 0.04996223529382522, min: 0.45515, max: 0.7141999999999998
+wall clock time for iteration 429: 458.0151615142822s
+=== Generation 429 finished ===
+
+
+
+=== Generation 430 ===
+Mean reward: 0.6911499999999999, std: 0.017807428225322167, min: 0.6455999999999998, max: 0.7244999999999999
+wall clock time for iteration 430: 460.73906207084656s
+=== Generation 430 finished ===
+
+
+
+=== Generation 431 ===
+Mean reward: 0.6952516666666667, std: 0.014465559577454613, min: 0.66275, max: 0.7206
+wall clock time for iteration 431: 457.31317353248596s
+=== Generation 431 finished ===
+
+
+
+=== Generation 432 ===
+Mean reward: 0.6979666666666665, std: 0.01446951008922631, min: 0.6515, max: 0.7253999999999999
+wall clock time for iteration 432: 459.18765664100647s
+=== Generation 432 finished ===
+
+
+
+=== Generation 433 ===
+Mean reward: 0.6947966666666667, std: 0.016218194172663694, min: 0.6576, max: 0.7203499999999999
+wall clock time for iteration 433: 456.9658899307251s
+=== Generation 433 finished ===
+
+
+
+=== Generation 434 ===
+Mean reward: 0.6970383333333333, std: 0.015576133898442866, min: 0.6530000000000001, max: 0.7251499999999999
+wall clock time for iteration 434: 457.52691173553467s
+=== Generation 434 finished ===
+
+
+
+=== Generation 435 ===
+Mean reward: 0.6928283333333333, std: 0.018191228121145517, min: 0.63485, max: 0.7195999999999999
+wall clock time for iteration 435: 453.2904734611511s
+=== Generation 435 finished ===
+
+
+
+=== Generation 436 ===
+Mean reward: 0.6918083333333335, std: 0.017126354366557076, min: 0.6528, max: 0.7257999999999999
+wall clock time for iteration 436: 456.7484483718872s
+=== Generation 436 finished ===
+
+
+
+=== Generation 437 ===
+Mean reward: 0.6926599999999998, std: 0.01744694529136833, min: 0.6574, max: 0.7355999999999999
+wall clock time for iteration 437: 457.93276023864746s
+=== Generation 437 finished ===
+
+
+
+=== Generation 438 ===
+Mean reward: 0.696645, std: 0.012653934500120239, min: 0.6674, max: 0.7256
+wall clock time for iteration 438: 457.46250891685486s
+=== Generation 438 finished ===
+
+
+
+=== Generation 439 ===
+Mean reward: 0.6829116666666667, std: 0.04037183978000286, min: 0.5042, max: 0.7197999999999999
+wall clock time for iteration 439: 456.31106996536255s
+=== Generation 439 finished ===
+
+
+
+=== Generation 440 ===
+Mean reward: 0.693625, std: 0.01775451468406461, min: 0.6498999999999999, max: 0.7303999999999999
+wall clock time for iteration 440: 453.4122076034546s
+=== Generation 440 finished ===
+
+
+
+=== Generation 441 ===
+Mean reward: 0.6877383333333333, std: 0.07755055306415005, min: 0.27740000000000004, max: 0.7343999999999999
+wall clock time for iteration 441: 458.30957794189453s
+=== Generation 441 finished ===
+
+
+
+=== Generation 442 ===
+Mean reward: 0.6918283333333332, std: 0.016516702068579622, min: 0.6581999999999999, max: 0.7197999999999999
+wall clock time for iteration 442: 455.8247287273407s
+=== Generation 442 finished ===
+
+
+
+=== Generation 443 ===
+Mean reward: 0.6981683333333335, std: 0.014859432937438175, min: 0.6629999999999999, max: 0.72
+wall clock time for iteration 443: 456.56479716300964s
+=== Generation 443 finished ===
+
+
+
+=== Generation 444 ===
+Mean reward: 0.6918333333333334, std: 0.021205095037644978, min: 0.6376000000000001, max: 0.7358
+wall clock time for iteration 444: 456.4448344707489s
+=== Generation 444 finished ===
+
+
+
+=== Generation 445 ===
+Mean reward: 0.6942633333333333, std: 0.016476518308051455, min: 0.6539000000000001, max: 0.7203499999999999
+wall clock time for iteration 445: 458.81405687332153s
+=== Generation 445 finished ===
+
+
+
+=== Generation 446 ===
+Mean reward: 0.6964116666666665, std: 0.01960169500890731, min: 0.6239, max: 0.7256
+wall clock time for iteration 446: 458.6125271320343s
+=== Generation 446 finished ===
+
+
+
+=== Generation 447 ===
+Mean reward: 0.69741, std: 0.014390931172095835, min: 0.67, max: 0.74115
+wall clock time for iteration 447: 455.65372586250305s
+=== Generation 447 finished ===
+
+
+
+=== Generation 448 ===
+Mean reward: 0.6946883333333334, std: 0.015513911409513172, min: 0.64925, max: 0.7148
+wall clock time for iteration 448: 455.2298107147217s
+=== Generation 448 finished ===
+
+
+
+=== Generation 449 ===
+Mean reward: 0.6979799999999999, std: 0.014334600331598588, min: 0.6660999999999998, max: 0.7358
+wall clock time for iteration 449: 456.13704323768616s
+=== Generation 449 finished ===
+
+
+
+=== Generation 450 ===
+Mean reward: 0.6963849999999997, std: 0.016737259582540204, min: 0.6624499999999999, max: 0.7256
+wall clock time for iteration 450: 457.73797845840454s
+=== Generation 450 finished ===
+
+
+
+=== Generation 451 ===
+Mean reward: 0.6998350000000001, std: 0.016786001856705896, min: 0.6684, max: 0.741
+wall clock time for iteration 451: 457.45228576660156s
+=== Generation 451 finished ===
+
+
+
+=== Generation 452 ===
+Mean reward: 0.6978816666666666, std: 0.017493310546860125, min: 0.6474000000000001, max: 0.7255999999999999
+wall clock time for iteration 452: 456.5735306739807s
+=== Generation 452 finished ===
+
+
+
+=== Generation 453 ===
+Mean reward: 0.6973749999999999, std: 0.016488580644393465, min: 0.6631999999999999, max: 0.72505
+wall clock time for iteration 453: 456.3280737400055s
+=== Generation 453 finished ===
+
+
+
+=== Generation 454 ===
+Mean reward: 0.6955966666666665, std: 0.015263026858683307, min: 0.6678000000000001, max: 0.7251999999999998
+wall clock time for iteration 454: 455.2841155529022s
+=== Generation 454 finished ===
+
+
+
+=== Generation 455 ===
+Mean reward: 0.6938033333333334, std: 0.016440148688162428, min: 0.6597999999999999, max: 0.7358
+wall clock time for iteration 455: 453.210214138031s
+=== Generation 455 finished ===
+
+
+
+=== Generation 456 ===
+Mean reward: 0.6988183333333332, std: 0.01745360747492876, min: 0.6625999999999999, max: 0.7252
+wall clock time for iteration 456: 453.4571199417114s
+=== Generation 456 finished ===
+
+
+
+=== Generation 457 ===
+Mean reward: 0.6989850000000001, std: 0.013454962839041943, min: 0.6684, max: 0.7203999999999999
+wall clock time for iteration 457: 454.41711807250977s
+=== Generation 457 finished ===
+
+
+
+=== Generation 458 ===
+Mean reward: 0.7003349999999997, std: 0.0172847676196895, min: 0.6430499999999999, max: 0.7352
+wall clock time for iteration 458: 454.887238740921s
+=== Generation 458 finished ===
+
+
+
+=== Generation 459 ===
+Mean reward: 0.6975049999999999, std: 0.018907292905119954, min: 0.6476, max: 0.7303999999999999
+wall clock time for iteration 459: 457.93279361724854s
+=== Generation 459 finished ===
+
+
+
+=== Generation 460 ===
+Mean reward: 0.69824, std: 0.015011125873831042, min: 0.6722, max: 0.7243999999999999
+wall clock time for iteration 460: 450.8716425895691s
+=== Generation 460 finished ===
+
+
+
+=== Generation 461 ===
+Mean reward: 0.6996383333333333, std: 0.01462331861180019, min: 0.6738, max: 0.7346999999999998
+wall clock time for iteration 461: 453.030579328537s
+=== Generation 461 finished ===
+
+
+
+=== Generation 462 ===
+Mean reward: 0.6942349999999998, std: 0.017344135175903105, min: 0.6248, max: 0.7185999999999999
+wall clock time for iteration 462: 447.8494668006897s
+=== Generation 462 finished ===
+
+
+
+=== Generation 463 ===
+Mean reward: 0.7009683333333335, std: 0.015671069328188455, min: 0.6541499999999999, max: 0.7252000000000001
+wall clock time for iteration 463: 451.5541718006134s
+=== Generation 463 finished ===
+
+
+
+=== Generation 464 ===
+Mean reward: 0.7056399999999999, std: 0.017442846671343524, min: 0.6631999999999999, max: 0.7305999999999999
+wall clock time for iteration 464: 449.4005227088928s
+=== Generation 464 finished ===
+
+
+
+=== Generation 465 ===
+Mean reward: 0.6964883333333332, std: 0.01599541436023324, min: 0.6629999999999999, max: 0.7306
+wall clock time for iteration 465: 449.4137246608734s
+=== Generation 465 finished ===
+
+
+
+=== Generation 466 ===
+Mean reward: 0.6989666666666667, std: 0.0153368202556969, min: 0.6631999999999999, max: 0.7303999999999999
+wall clock time for iteration 466: 448.7597794532776s
+=== Generation 466 finished ===
+
+
+
+=== Generation 467 ===
+Mean reward: 0.6985866666666666, std: 0.01833345272688394, min: 0.6489, max: 0.7362000000000001
+wall clock time for iteration 467: 445.978884935379s
+=== Generation 467 finished ===
+
+
+
+=== Generation 468 ===
+Mean reward: 0.6992250000000001, std: 0.01635398396925553, min: 0.6631999999999999, max: 0.7256
+wall clock time for iteration 468: 445.46618938446045s
+=== Generation 468 finished ===
+
+
+
+=== Generation 469 ===
+Mean reward: 0.6987383333333335, std: 0.01652707215113702, min: 0.6586, max: 0.7312000000000001
+wall clock time for iteration 469: 446.8820090293884s
+=== Generation 469 finished ===
+
+
+
+=== Generation 470 ===
+Mean reward: 0.6974766666666665, std: 0.014701041535286615, min: 0.6683999999999999, max: 0.731
+wall clock time for iteration 470: 443.79870438575745s
+=== Generation 470 finished ===
+
+
+
+=== Generation 471 ===
+Mean reward: 0.6943833333333334, std: 0.01570179572179209, min: 0.64875, max: 0.7203999999999999
+wall clock time for iteration 471: 447.64874053001404s
+=== Generation 471 finished ===
+
+
+
+=== Generation 472 ===
+Mean reward: 0.7021916666666669, std: 0.014557020547564746, min: 0.6666, max: 0.7303499999999999
+wall clock time for iteration 472: 449.23017621040344s
+=== Generation 472 finished ===
+
+
+
+=== Generation 473 ===
+Mean reward: 0.6930416666666664, std: 0.03443748462391266, min: 0.5485, max: 0.7303999999999999
+wall clock time for iteration 473: 483.17088508605957s
+=== Generation 473 finished ===
+
+
+
+=== Generation 474 ===
+Mean reward: 0.7014999999999999, std: 0.018260800457081085, min: 0.66145, max: 0.7411999999999999
+wall clock time for iteration 474: 459.31445121765137s
+=== Generation 474 finished ===
+
+
+
+=== Generation 475 ===
+Mean reward: 0.702225, std: 0.012288888951677708, min: 0.6734, max: 0.7203999999999999
+wall clock time for iteration 475: 460.41213512420654s
+=== Generation 475 finished ===
+
+
+
+=== Generation 476 ===
+Mean reward: 0.7009583333333332, std: 0.020763196941276214, min: 0.6591999999999999, max: 0.7461999999999999
+wall clock time for iteration 476: 462.15826511383057s
+=== Generation 476 finished ===
+
+
+
+=== Generation 477 ===
+Mean reward: 0.6998800000000001, std: 0.01566901719955658, min: 0.6681999999999999, max: 0.7308500000000001
+wall clock time for iteration 477: 458.12341046333313s
+=== Generation 477 finished ===
+
+
+
+=== Generation 478 ===
+Mean reward: 0.7021733333333332, std: 0.017068146420224493, min: 0.6684, max: 0.7357999999999998
+wall clock time for iteration 478: 455.3827612400055s
+=== Generation 478 finished ===
+
+
+
+=== Generation 479 ===
+Mean reward: 0.6980716666666665, std: 0.020605992992870352, min: 0.6526, max: 0.7308
+wall clock time for iteration 479: 453.94409227371216s
+=== Generation 479 finished ===
+
+
+
+=== Generation 480 ===
+Mean reward: 0.7008449999999999, std: 0.017824156595287542, min: 0.6632000000000001, max: 0.7361999999999999
+wall clock time for iteration 480: 456.1620466709137s
+=== Generation 480 finished ===
+
+
+
+=== Generation 481 ===
+Mean reward: 0.6987833333333332, std: 0.03334979093720913, min: 0.5601499999999999, max: 0.7407999999999998
+wall clock time for iteration 481: 461.6671187877655s
+=== Generation 481 finished ===
+
+
+
+=== Generation 482 ===
+Mean reward: 0.7086483333333333, std: 0.012026501869713511, min: 0.6822999999999999, max: 0.7361999999999999
+wall clock time for iteration 482: 466.76598143577576s
+=== Generation 482 finished ===
+
+
+
+=== Generation 483 ===
+Mean reward: 0.7006316666666667, std: 0.023406129835769295, min: 0.6289999999999999, max: 0.7307999999999999
+wall clock time for iteration 483: 469.8595058917999s
+=== Generation 483 finished ===
+
+
+
+=== Generation 484 ===
+Mean reward: 0.69776, std: 0.018936030030957722, min: 0.6216, max: 0.7171500000000001
+wall clock time for iteration 484: 460.6120128631592s
+=== Generation 484 finished ===
+
+
+
+=== Generation 485 ===
+Mean reward: 0.708135, std: 0.01652215255346589, min: 0.6631999999999999, max: 0.7353999999999999
+wall clock time for iteration 485: 471.53371262550354s
+=== Generation 485 finished ===
+
+
+
+=== Generation 486 ===
+Mean reward: 0.7034349999999999, std: 0.016278427186514868, min: 0.6648000000000001, max: 0.7402
+wall clock time for iteration 486: 464.91219305992126s
+=== Generation 486 finished ===
+
+
+
+=== Generation 487 ===
+Mean reward: 0.7014349999999998, std: 0.017539194916909168, min: 0.64835, max: 0.7291999999999998
+wall clock time for iteration 487: 462.85396361351013s
+=== Generation 487 finished ===
+
+
+
+=== Generation 488 ===
+Mean reward: 0.69543, std: 0.04057932683851057, min: 0.5237000000000002, max: 0.74095
+wall clock time for iteration 488: 474.02411127090454s
+=== Generation 488 finished ===
+
+
+
+=== Generation 489 ===
+Mean reward: 0.7033816666666666, std: 0.017258328826653194, min: 0.6579999999999999, max: 0.736
+wall clock time for iteration 489: 468.43745279312134s
+=== Generation 489 finished ===
+
+
+
+=== Generation 490 ===
+Mean reward: 0.7034983333333332, std: 0.018704685167685187, min: 0.66905, max: 0.7458
+wall clock time for iteration 490: 462.3747630119324s
+=== Generation 490 finished ===
+
+
+
+=== Generation 491 ===
+Mean reward: 0.7039133333333333, std: 0.016666142991772912, min: 0.667, max: 0.7307999999999999
+wall clock time for iteration 491: 460.3008043766022s
+=== Generation 491 finished ===
+
+
+
+=== Generation 492 ===
+Mean reward: 0.7000483333333333, std: 0.02123986222229851, min: 0.6423999999999999, max: 0.731
+wall clock time for iteration 492: 460.4557807445526s
+=== Generation 492 finished ===
+
+
+
+=== Generation 493 ===
+Mean reward: 0.7072549999999999, std: 0.019576160459429556, min: 0.6355999999999999, max: 0.7395999999999999
+wall clock time for iteration 493: 457.7072739601135s
+=== Generation 493 finished ===
+
+
+
+=== Generation 494 ===
+Mean reward: 0.7043866666666666, std: 0.014734477331151649, min: 0.6741999999999999, max: 0.7363999999999998
+wall clock time for iteration 494: 454.1623272895813s
+=== Generation 494 finished ===
+
+
+
+=== Generation 495 ===
+Mean reward: 0.7056333333333332, std: 0.019134686363309502, min: 0.6632999999999999, max: 0.7408000000000001
+wall clock time for iteration 495: 447.72968196868896s
+=== Generation 495 finished ===
+
+
+
+=== Generation 496 ===

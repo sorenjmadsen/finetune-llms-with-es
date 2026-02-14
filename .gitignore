@@ -1,5 +1,6 @@
 **.pth
 **.safetensors
 **.DS_Store
+**.pyc
 /es
 /es-ft-experiment
