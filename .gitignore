@@ -4,3 +4,5 @@
 **.pyc
 /es
 /es-ft-experiment
+**__pycache__
+.vscode

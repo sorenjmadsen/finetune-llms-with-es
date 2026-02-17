@@ -27,12 +27,13 @@ ALPHA = 0.0005
 POPULATION_SIZE = 30
 NUM_ENGINES = 4
 NUM_ITERATIONS = 1000
-EXPERIMENT_DIR = "es-ft-experiment"
+EXPERIMENT_DIR = "/mnt/data/es-ft-experiment"
 
 def parse_args():
     parser = argparse.ArgumentParser(
         description="ES Fine-tuning for Countdown Task with multi-engine NCCL sync"
     )
+    
     parser.add_argument("--model_name", type=str, default="Qwen/Qwen2.5-3B-Instruct")
     parser.add_argument("--sigma", type=float, default=SIGMA)
     parser.add_argument("--alpha", type=float, default=ALPHA)

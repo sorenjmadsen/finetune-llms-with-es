@@ -1,0 +1,810 @@
+INFO 02-15 15:58:21 [__init__.py:216] Automatically detected platform cuda.
+2026-02-15 15:58:24,399	INFO worker.py:2007 -- Started a local Ray instance.
+/home/madsen/Documents/finetune-llms-with-es/es/lib/python3.12/site-packages/ray/_private/worker.py:2046: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.35it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  3.13it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.98it/s]
+[36m(pid=43792)[0m INFO 02-15 15:58:36 [__init__.py:216] Automatically detected platform cuda.
+[36m(ESNcclLLM pid=43792)[0m `torch_dtype` is deprecated! Use `dtype` instead!
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:38 [utils.py:233] non-default args: {'dtype': 'float16', 'distributed_executor_backend': 'ray', 'enable_prefix_caching': False, 'disable_log_stats': True, 'worker_extension_cls': 'utils.worker_extn.WorkerExtension', 'model': '/mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model'}
+[36m(ESNcclLLM pid=43792)[0m WARNING 02-15 15:58:38 [model.py:371] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:38 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:38 [model.py:1510] Using max model len 32768
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:38 [arg_utils.py:1215] Using ray runtime env: {}
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:38 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[36m(ESNcclLLM pid=43792)[0m The tokenizer you are loading from '/mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:39 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='/mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model', speculative_config=None, tokenizer='/mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model, enable_prefix_caching=False, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":512,"local_cache_dir":null}
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:39 [ray_utils.py:295] Ray is already initialized. Skipping Ray initialization.
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:39 [ray_utils.py:324] Using the existing placement group
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:39 [ray_distributed_executor.py:171] use_ray_spmd_worker: True
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:42 [ray_env.py:63] RAY_NON_CARRY_OVER_ENV_VARS from config: set()
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:42 [ray_env.py:65] Copying the following environment variables to workers: ['VLLM_ENABLE_V1_MULTIPROCESSING', 'VLLM_USE_RAY_COMPILED_DAG', 'VLLM_USE_RAY_SPMD_WORKER', 'VLLM_USE_V1']
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:58:42 [ray_env.py:68] If certain env vars should NOT be copied, add them to /home/madsen/.config/vllm/ray_non_carry_over_env_vars.json file
+[36m(pid=43791)[0m INFO 02-15 15:58:41 [__init__.py:216] Automatically detected platform cuda.
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:45 [worker_base.py:243] Injected <class 'utils.worker_extn.WorkerExtension'> into <class 'vllm.v1.worker.gpu_worker.Worker'> for extended collective_rpc calls ['broadcast_all_weights', 'init_inter_engine_group', 'perturb_self_weights', 'restore_self_weights', 'save_self_weights_to_disk']
+[36m(RayWorkerWrapper pid=43791)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=43791)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=43791)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=43791)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=43791)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=43791)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:45 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:45 [topk_topp_sampler.py:55] Using FlashInfer for top-p & top-k sampling.
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:45 [gpu_model_runner.py:2602] Starting to load model /mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model...
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:45 [gpu_model_runner.py:2634] Loading model from scratch...
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:45 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[36m(RayWorkerWrapper pid=43791)[0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:46 [default_loader.py:267] Loading weights took 1.04 seconds
+[36m(RayWorkerWrapper pid=43791)[0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  2.12it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.96it/s]
+[36m(RayWorkerWrapper pid=43791)[0m 
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:47 [gpu_model_runner.py:2653] Model loading took 5.7916 GiB and 1.201780 seconds
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:52 [backends.py:548] Using cache directory: /home/madsen/.cache/vllm/torch_compile_cache/ae788886aa/rank_0_0/backbone for vLLM's torch.compile
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:52 [backends.py:559] Dynamo bytecode transform time: 5.24 s
+[36m(pid=gcs_server)[0m [2026-02-15 15:58:53,471 E 43573 43573] (gcs_server) gcs_server.cc:303: Failed to establish connection to the event+metrics exporter agent. Events and metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[33m(raylet)[0m [2026-02-15 15:58:54,328 E 43716 43716] (raylet) main.cc:1032: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(bundle_reservation_check_func pid=43790)[0m [2026-02-15 15:58:54,929 E 43790 44060] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[2026-02-15 15:58:55,137 E 43499 43789] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:58:55 [backends.py:197] Cache the graph for dynamic shape for later use
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:59:11 [backends.py:218] Compiling a graph for dynamic shape takes 18.44 s
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:59:17 [monitor.py:34] torch.compile takes 23.68 s in total
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:59:18 [gpu_worker.py:298] Available KV cache memory: 14.71 GiB
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:18 [kv_cache_utils.py:1087] GPU KV cache size: 428,576 tokens
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:18 [kv_cache_utils.py:1091] Maximum concurrency for 32,768 tokens per request: 13.08x
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/67 [00:00<?, ?it/s]
+[36m(pid=43796)[0m [2026-02-15 15:58:55,124 E 43796 44801] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14[32m [repeated 19x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   3%|▎         | 2/67 [00:00<00:05, 12.96it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 4/67 [00:00<00:04, 12.88it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   9%|▉         | 6/67 [00:00<00:04, 13.46it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 8/67 [00:00<00:04, 13.74it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  15%|█▍        | 10/67 [00:00<00:04, 14.07it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 12/67 [00:00<00:03, 14.28it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  21%|██        | 14/67 [00:01<00:03, 14.38it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▍       | 16/67 [00:01<00:03, 14.43it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 18/67 [00:01<00:03, 14.87it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  30%|██▉       | 20/67 [00:01<00:03, 15.12it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 22/67 [00:01<00:02, 15.34it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  36%|███▌      | 24/67 [00:01<00:02, 15.45it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 26/67 [00:01<00:02, 15.76it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  42%|████▏     | 28/67 [00:01<00:02, 15.96it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▍     | 30/67 [00:02<00:02, 16.15it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  48%|████▊     | 32/67 [00:02<00:02, 16.21it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 34/67 [00:02<00:02, 16.46it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  54%|█████▎    | 36/67 [00:02<00:01, 16.96it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 38/67 [00:02<00:01, 17.36it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  60%|█████▉    | 40/67 [00:02<00:01, 17.65it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 42/67 [00:02<00:01, 18.13it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 45/67 [00:02<00:01, 18.76it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  70%|███████   | 47/67 [00:02<00:01, 19.07it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 50/67 [00:03<00:00, 19.87it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  79%|███████▉  | 53/67 [00:03<00:00, 20.08it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▎ | 56/67 [00:03<00:00, 20.34it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 59/67 [00:03<00:00, 20.40it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  93%|█████████▎| 62/67 [00:03<00:00, 20.49it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  97%|█████████▋| 65/67 [00:03<00:00, 20.59it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 67/67 [00:03<00:00, 17.11it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):   6%|▌         | 2/35 [00:00<00:01, 16.56it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  11%|█▏        | 4/35 [00:00<00:01, 17.02it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  17%|█▋        | 6/35 [00:00<00:01, 17.15it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  23%|██▎       | 8/35 [00:00<00:01, 17.41it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  29%|██▊       | 10/35 [00:00<00:01, 17.75it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  34%|███▍      | 12/35 [00:00<00:01, 18.11it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  40%|████      | 14/35 [00:00<00:01, 18.52it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  46%|████▌     | 16/35 [00:00<00:01, 18.83it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  54%|█████▍    | 19/35 [00:01<00:00, 19.69it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 22/35 [00:01<00:00, 20.08it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  71%|███████▏  | 25/35 [00:01<00:00, 20.15it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  80%|████████  | 28/35 [00:01<00:00, 20.12it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  89%|████████▊ | 31/35 [00:01<00:00, 20.19it/s]
+[36m(RayWorkerWrapper pid=43791)[0m Capturing CUDA graphs (decode, FULL):  97%|█████████▋| 34/35 [00:01<00:00, 20.32it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:01<00:00, 19.38it/s]
+[36m(RayWorkerWrapper pid=43791)[0m INFO 02-15 15:59:24 [gpu_model_runner.py:3480] Graph capturing finished in 6 secs, took 0.66 GiB
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:24 [core.py:210] init engine (profile, create kv cache, warmup model) took 37.50 seconds
+[36m(ESNcclLLM pid=43792)[0m The tokenizer you are loading from '/mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/base_model' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:25 [llm.py:306] Supported_tasks: ('generate',)
+
+
+=== Generation 0 ===
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:25 [ray_distributed_executor.py:552] RAY_CGRAPH_get_timeout is set to 300
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:25 [ray_distributed_executor.py:554] VLLM_USE_RAY_COMPILED_DAG_CHANNEL_TYPE = auto
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:25 [ray_distributed_executor.py:556] VLLM_USE_RAY_COMPILED_DAG_OVERLAP_COMM = False
+[36m(ESNcclLLM pid=43792)[0m INFO 02-15 15:59:25 [ray_distributed_executor.py:621] Using RayPPCommunicator (which wraps vLLM _PP GroupCoordinator) for Ray Compiled Graph communication.
+Mean reward: 0.15669666666666673, std: 0.028930033221934298, min: 0.09330000000000002, max: 0.21625000000000003
+wall clock time for iteration 0: 837.2107441425323s
+=== Generation 0 finished ===
+
+
+
+=== Generation 1 ===
+Mean reward: 0.15330333333333332, std: 0.025844109365363882, min: 0.10195000000000003, max: 0.20835000000000004
+wall clock time for iteration 1: 841.0377066135406s
+=== Generation 1 finished ===
+
+
+
+=== Generation 2 ===
+Mean reward: 0.16821333333333335, std: 0.029682601338532018, min: 0.08790000000000003, max: 0.22380000000000003
+wall clock time for iteration 2: 809.0597395896912s
+=== Generation 2 finished ===
+
+
+
+=== Generation 3 ===
+Mean reward: 0.167315, std: 0.02501071153859216, min: 0.11650000000000002, max: 0.20980000000000004
+wall clock time for iteration 3: 808.8330357074738s
+=== Generation 3 finished ===
+
+
+
+=== Generation 4 ===
+Mean reward: 0.17067000000000004, std: 0.024418093018634096, min: 0.12810000000000002, max: 0.2162
+wall clock time for iteration 4: 791.526519536972s
+=== Generation 4 finished ===
+
+
+
+=== Generation 5 ===
+Mean reward: 0.17335499999999998, std: 0.03296471687021343, min: 0.10375000000000002, max: 0.24670000000000006
+wall clock time for iteration 5: 776.354574918747s
+=== Generation 5 finished ===
+
+
+
+=== Generation 6 ===
+Mean reward: 0.18134833333333336, std: 0.02792402335902826, min: 0.13470000000000001, max: 0.24800000000000005
+wall clock time for iteration 6: 778.5490097999573s
+=== Generation 6 finished ===
+
+
+
+=== Generation 7 ===
+Mean reward: 0.18011166666666673, std: 0.024029848395045884, min: 0.12800000000000003, max: 0.21780000000000005
+wall clock time for iteration 7: 773.2007780075073s
+=== Generation 7 finished ===
+
+
+
+=== Generation 8 ===
+Mean reward: 0.19171500000000005, std: 0.02817479118526584, min: 0.12255, max: 0.23950000000000002
+wall clock time for iteration 8: 774.3498442173004s
+=== Generation 8 finished ===
+
+
+
+=== Generation 9 ===
+Mean reward: 0.19626000000000005, std: 0.03467922144454803, min: 0.13265000000000002, max: 0.27465000000000006
+wall clock time for iteration 9: 751.098771572113s
+=== Generation 9 finished ===
+
+
+
+=== Generation 10 ===
+Mean reward: 0.1937216666666667, std: 0.029646955108783467, min: 0.14140000000000005, max: 0.2624
+wall clock time for iteration 10: 754.5932579040527s
+=== Generation 10 finished ===
+
+
+
+=== Generation 11 ===
+Mean reward: 0.20227333333333336, std: 0.03410306372682014, min: 0.12090000000000002, max: 0.2634
+wall clock time for iteration 11: 770.9638087749481s
+=== Generation 11 finished ===
+
+
+
+=== Generation 12 ===
+Mean reward: 0.20306000000000005, std: 0.02799262819624719, min: 0.14750000000000005, max: 0.25600000000000006
+wall clock time for iteration 12: 771.8801996707916s
+=== Generation 12 finished ===
+
+
+
+=== Generation 13 ===
+Mean reward: 0.21088, std: 0.03956338079588245, min: 0.12470000000000002, max: 0.2936000000000001
+wall clock time for iteration 13: 771.0978860855103s
+=== Generation 13 finished ===
+
+
+
+=== Generation 14 ===
+Mean reward: 0.22090166666666672, std: 0.037423055467927194, min: 0.13040000000000002, max: 0.2891
+wall clock time for iteration 14: 773.0686566829681s
+=== Generation 14 finished ===
+
+
+
+=== Generation 15 ===
+Mean reward: 0.22318000000000005, std: 0.030309219169531013, min: 0.17300000000000004, max: 0.3211
+wall clock time for iteration 15: 749.2398824691772s
+=== Generation 15 finished ===
+
+
+
+=== Generation 16 ===
+Mean reward: 0.23369000000000004, std: 0.03175817585021743, min: 0.18970000000000004, max: 0.31750000000000006
+wall clock time for iteration 16: 747.5859625339508s
+=== Generation 16 finished ===
+
+
+
+=== Generation 17 ===
+Mean reward: 0.23848000000000003, std: 0.033872898704815135, min: 0.17500000000000004, max: 0.32905
+wall clock time for iteration 17: 794.1687943935394s
+=== Generation 17 finished ===
+
+
+
+=== Generation 18 ===
+Mean reward: 0.2320033333333333, std: 0.033859538127715534, min: 0.17110000000000003, max: 0.35400000000000004
+wall clock time for iteration 18: 756.3178284168243s
+=== Generation 18 finished ===
+
+
+
+=== Generation 19 ===
+Mean reward: 0.24464333333333335, std: 0.03056948841937369, min: 0.16440000000000002, max: 0.31260000000000004
+wall clock time for iteration 19: 768.6014199256897s
+=== Generation 19 finished ===
+
+
+
+=== Generation 20 ===
+Mean reward: 0.24864499999999998, std: 0.025271922331578454, min: 0.18200000000000002, max: 0.28575
+wall clock time for iteration 20: 756.236138343811s
+=== Generation 20 finished ===
+
+
+
+=== Generation 21 ===
+Mean reward: 0.24322166666666672, std: 0.03398665346704334, min: 0.15000000000000002, max: 0.31000000000000005
+wall clock time for iteration 21: 762.7525763511658s
+=== Generation 21 finished ===
+
+
+
+=== Generation 22 ===
+Mean reward: 0.2560766666666667, std: 0.03384543231942664, min: 0.17815000000000006, max: 0.3271
+wall clock time for iteration 22: 786.5628392696381s
+=== Generation 22 finished ===
+
+
+
+=== Generation 23 ===
+Mean reward: 0.25680833333333336, std: 0.03452138729187394, min: 0.14645000000000002, max: 0.32760000000000006
+wall clock time for iteration 23: 759.7041206359863s
+=== Generation 23 finished ===
+
+
+
+=== Generation 24 ===
+Mean reward: 0.2595483333333333, std: 0.023757028726018935, min: 0.21555000000000002, max: 0.32210000000000005
+wall clock time for iteration 24: 755.9473373889923s
+=== Generation 24 finished ===
+
+
+
+=== Generation 25 ===
+Mean reward: 0.27455666666666667, std: 0.026474360972248017, min: 0.21760000000000004, max: 0.32020000000000004
+wall clock time for iteration 25: 755.1563148498535s
+=== Generation 25 finished ===
+
+
+
+=== Generation 26 ===
+Mean reward: 0.2683933333333333, std: 0.024222681290247152, min: 0.1996, max: 0.30530000000000007
+wall clock time for iteration 26: 760.9584255218506s
+=== Generation 26 finished ===
+
+
+
+=== Generation 27 ===
+Mean reward: 0.28066, std: 0.03056961018179111, min: 0.21510000000000004, max: 0.33120000000000005
+wall clock time for iteration 27: 763.8034851551056s
+=== Generation 27 finished ===
+
+
+
+=== Generation 28 ===
+Mean reward: 0.2777283333333334, std: 0.043264305309214074, min: 0.18359999999999999, max: 0.3542
+wall clock time for iteration 28: 760.2591798305511s
+=== Generation 28 finished ===
+
+
+
+=== Generation 29 ===
+Mean reward: 0.28564833333333334, std: 0.03632947032216254, min: 0.20270000000000002, max: 0.36760000000000004
+wall clock time for iteration 29: 774.9978420734406s
+=== Generation 29 finished ===
+
+
+
+=== Generation 30 ===
+Mean reward: 0.2952800000000001, std: 0.030127583153427142, min: 0.22980000000000003, max: 0.33820000000000006
+wall clock time for iteration 30: 764.5247137546539s
+=== Generation 30 finished ===
+
+
+
+=== Generation 31 ===
+Mean reward: 0.29809, std: 0.02821386597638355, min: 0.21970000000000006, max: 0.34879999999999994
+wall clock time for iteration 31: 758.9086532592773s
+=== Generation 31 finished ===
+
+
+
+=== Generation 32 ===
+Mean reward: 0.29433166666666666, std: 0.037908639040314926, min: 0.16750000000000004, max: 0.36890000000000006
+wall clock time for iteration 32: 767.0792419910431s
+=== Generation 32 finished ===
+
+
+
+=== Generation 33 ===
+Mean reward: 0.2954550000000001, std: 0.02503195740781504, min: 0.25320000000000004, max: 0.34230000000000005
+wall clock time for iteration 33: 769.6810171604156s
+=== Generation 33 finished ===
+
+
+
+=== Generation 34 ===
+Mean reward: 0.31223000000000006, std: 0.03086117463739835, min: 0.2574, max: 0.3978
+wall clock time for iteration 34: 774.129430770874s
+=== Generation 34 finished ===
+
+
+
+=== Generation 35 ===
+Mean reward: 0.2964783333333333, std: 0.03563396713655229, min: 0.21790000000000004, max: 0.3829
+wall clock time for iteration 35: 775.4756009578705s
+=== Generation 35 finished ===
+
+
+
+=== Generation 36 ===
+Mean reward: 0.3045816666666667, std: 0.03566156774300435, min: 0.21970000000000003, max: 0.35645000000000004
+wall clock time for iteration 36: 771.9282338619232s
+=== Generation 36 finished ===
+
+
+
+=== Generation 37 ===
+Mean reward: 0.30570833333333336, std: 0.030175647143939686, min: 0.24365000000000006, max: 0.37040000000000006
+wall clock time for iteration 37: 762.3897397518158s
+=== Generation 37 finished ===
+
+
+
+=== Generation 38 ===
+Mean reward: 0.31527333333333335, std: 0.030426492659449852, min: 0.2513, max: 0.37650000000000006
+wall clock time for iteration 38: 756.500746011734s
+=== Generation 38 finished ===
+
+
+
+=== Generation 39 ===
+Mean reward: 0.31102166666666675, std: 0.03268407533578938, min: 0.22040000000000004, max: 0.3914
+wall clock time for iteration 39: 754.0543918609619s
+=== Generation 39 finished ===
+
+
+
+=== Generation 40 ===
+Mean reward: 0.3234000000000001, std: 0.03842934208821864, min: 0.24880000000000002, max: 0.45659999999999995
+wall clock time for iteration 40: 753.0771996974945s
+=== Generation 40 finished ===
+
+
+
+=== Generation 41 ===
+Mean reward: 0.32270333333333334, std: 0.034060093788609705, min: 0.22510000000000002, max: 0.3882000000000001
+wall clock time for iteration 41: 751.2427558898926s
+=== Generation 41 finished ===
+
+
+
+=== Generation 42 ===
+Mean reward: 0.32112333333333337, std: 0.031788288549226565, min: 0.2697, max: 0.374
+wall clock time for iteration 42: 752.8447866439819s
+=== Generation 42 finished ===
+
+
+
+=== Generation 43 ===
+Mean reward: 0.3330116666666667, std: 0.038991051715603776, min: 0.24200000000000002, max: 0.4053
+wall clock time for iteration 43: 760.586699962616s
+=== Generation 43 finished ===
+
+
+
+=== Generation 44 ===
+Mean reward: 0.3300833333333334, std: 0.0356576016517594, min: 0.25040000000000007, max: 0.40990000000000004
+wall clock time for iteration 44: 777.461511850357s
+=== Generation 44 finished ===
+
+
+
+=== Generation 45 ===
+Mean reward: 0.3419200000000001, std: 0.038896646385003425, min: 0.261, max: 0.4226
+wall clock time for iteration 45: 778.7702865600586s
+=== Generation 45 finished ===
+
+
+
+=== Generation 46 ===
+Mean reward: 0.34131333333333325, std: 0.027329257622961914, min: 0.28690000000000004, max: 0.39185000000000003
+wall clock time for iteration 46: 761.2065551280975s
+=== Generation 46 finished ===
+
+
+
+=== Generation 47 ===
+Mean reward: 0.3430066666666667, std: 0.04453072110602098, min: 0.2568, max: 0.44730000000000003
+wall clock time for iteration 47: 774.3451161384583s
+=== Generation 47 finished ===
+
+
+
+=== Generation 48 ===
+Mean reward: 0.33792666666666665, std: 0.03961341046778084, min: 0.22935000000000003, max: 0.4059999999999999
+wall clock time for iteration 48: 766.9026556015015s
+=== Generation 48 finished ===
+
+
+
+=== Generation 49 ===
+Mean reward: 0.34615833333333335, std: 0.03575843509656924, min: 0.2456, max: 0.3953
+wall clock time for iteration 49: 760.8361685276031s
+=== Generation 49 finished ===
+
+
+
+=== Generation 50 ===
+Mean reward: 0.35157666666666676, std: 0.034537910893522324, min: 0.2886000000000001, max: 0.4296
+wall clock time for iteration 50: 775.4871656894684s
+=== Generation 50 finished ===
+
+
+
+=== Generation 51 ===
+Mean reward: 0.35857000000000006, std: 0.03990282279070825, min: 0.2695, max: 0.45630000000000004
+wall clock time for iteration 51: 764.389762878418s
+=== Generation 51 finished ===
+
+
+
+=== Generation 52 ===
+Mean reward: 0.3496850000000001, std: 0.03041656936057494, min: 0.2792, max: 0.4036
+wall clock time for iteration 52: 755.4970214366913s
+=== Generation 52 finished ===
+
+
+
+=== Generation 53 ===
+Mean reward: 0.35861, std: 0.022449760206588693, min: 0.32189999999999996, max: 0.41945
+wall clock time for iteration 53: 781.2715611457825s
+=== Generation 53 finished ===
+
+
+
+=== Generation 54 ===
+Mean reward: 0.36224, std: 0.03189949947360719, min: 0.32120000000000004, max: 0.42314999999999997
+wall clock time for iteration 54: 760.1689577102661s
+=== Generation 54 finished ===
+
+
+
+=== Generation 55 ===
+Mean reward: 0.37006166666666657, std: 0.030667753649214157, min: 0.30500000000000005, max: 0.4243
+wall clock time for iteration 55: 770.9637954235077s
+=== Generation 55 finished ===
+
+
+
+=== Generation 56 ===
+Mean reward: 0.3788016666666667, std: 0.041599187659002286, min: 0.29810000000000003, max: 0.48235
+wall clock time for iteration 56: 787.2360684871674s
+=== Generation 56 finished ===
+
+
+
+=== Generation 57 ===
+Mean reward: 0.3712683333333333, std: 0.03164498507750564, min: 0.31400000000000006, max: 0.4343
+wall clock time for iteration 57: 766.1713304519653s
+=== Generation 57 finished ===
+
+
+
+=== Generation 58 ===
+Mean reward: 0.36868, std: 0.04174176086367223, min: 0.25070000000000003, max: 0.43709999999999993
+wall clock time for iteration 58: 790.5223824977875s
+=== Generation 58 finished ===
+
+
+
+=== Generation 59 ===
+Mean reward: 0.38114666666666663, std: 0.03274982171283108, min: 0.2928, max: 0.4501
+wall clock time for iteration 59: 799.1088201999664s
+=== Generation 59 finished ===
+
+
+
+=== Generation 60 ===
+Mean reward: 0.38442833333333337, std: 0.03606140985257723, min: 0.31970000000000004, max: 0.46679999999999994
+wall clock time for iteration 60: 821.31729388237s
+=== Generation 60 finished ===
+
+
+
+=== Generation 61 ===
+Mean reward: 0.39091333333333333, std: 0.036896300476997525, min: 0.32530000000000003, max: 0.49144999999999994
+wall clock time for iteration 61: 813.9639823436737s
+=== Generation 61 finished ===
+
+
+
+=== Generation 62 ===
+Mean reward: 0.4042766666666667, std: 0.032410684280890376, min: 0.3274, max: 0.48379999999999995
+wall clock time for iteration 62: 807.6621961593628s
+=== Generation 62 finished ===
+
+
+
+=== Generation 63 ===
+Mean reward: 0.39346000000000003, std: 0.030321987072090106, min: 0.32770000000000005, max: 0.4493
+wall clock time for iteration 63: 795.4016416072845s
+=== Generation 63 finished ===
+
+
+
+=== Generation 64 ===
+Mean reward: 0.39925666666666676, std: 0.03885487900151306, min: 0.30080000000000007, max: 0.466
+wall clock time for iteration 64: 817.7382714748383s
+=== Generation 64 finished ===
+
+
+
+=== Generation 65 ===
+Mean reward: 0.39857000000000004, std: 0.038185784003998136, min: 0.32360000000000005, max: 0.4696
+wall clock time for iteration 65: 794.3701090812683s
+=== Generation 65 finished ===
+
+
+
+=== Generation 66 ===
+Mean reward: 0.40762, std: 0.03841974015181952, min: 0.32120000000000004, max: 0.47950000000000004
+wall clock time for iteration 66: 809.3152184486389s
+=== Generation 66 finished ===
+
+
+
+=== Generation 67 ===
+Mean reward: 0.4230866666666667, std: 0.03532203498604738, min: 0.3476000000000001, max: 0.4852
+wall clock time for iteration 67: 801.2678458690643s
+=== Generation 67 finished ===
+
+
+
+=== Generation 68 ===
+Mean reward: 0.3985166666666667, std: 0.03498384944831289, min: 0.32645, max: 0.45799999999999996
+wall clock time for iteration 68: 812.2113234996796s
+=== Generation 68 finished ===
+
+
+
+=== Generation 69 ===
+Mean reward: 0.4199916666666666, std: 0.04497607342304968, min: 0.30820000000000003, max: 0.4899
+wall clock time for iteration 69: 828.8533618450165s
+=== Generation 69 finished ===
+
+
+
+=== Generation 70 ===
+Mean reward: 0.41276333333333337, std: 0.032621293999812784, min: 0.32435, max: 0.4569499999999999
+wall clock time for iteration 70: 806.6948988437653s
+=== Generation 70 finished ===
+
+
+
+=== Generation 71 ===
+Mean reward: 0.4325500000000001, std: 0.03165780577782777, min: 0.36230000000000007, max: 0.5048
+wall clock time for iteration 71: 826.5889611244202s
+=== Generation 71 finished ===
+
+
+
+=== Generation 72 ===
+Mean reward: 0.437065, std: 0.027806057943069392, min: 0.37540000000000007, max: 0.5063
+wall clock time for iteration 72: 815.8047759532928s
+=== Generation 72 finished ===
+
+
+
+=== Generation 73 ===
+Mean reward: 0.4375283333333334, std: 0.03207157537792962, min: 0.37349999999999994, max: 0.506
+wall clock time for iteration 73: 827.078884601593s
+=== Generation 73 finished ===
+
+
+
+=== Generation 74 ===
+Mean reward: 0.43450833333333333, std: 0.052057766124651246, min: 0.28350000000000003, max: 0.519
+wall clock time for iteration 74: 837.379784822464s
+=== Generation 74 finished ===
+
+
+
+=== Generation 75 ===
+Mean reward: 0.43672333333333335, std: 0.03634032822575431, min: 0.36095, max: 0.5025
+wall clock time for iteration 75: 816.952134847641s
+=== Generation 75 finished ===
+
+
+
+=== Generation 76 ===
+Mean reward: 0.4361616666666667, std: 0.03782672926942299, min: 0.3418, max: 0.5307499999999999
+wall clock time for iteration 76: 828.8866353034973s
+=== Generation 76 finished ===
+
+
+
+=== Generation 77 ===
+Mean reward: 0.4517783333333333, std: 0.029504648456735682, min: 0.40259999999999996, max: 0.507
+wall clock time for iteration 77: 828.9715733528137s
+=== Generation 77 finished ===
+
+
+
+=== Generation 78 ===
+Mean reward: 0.44971333333333335, std: 0.035897063327736914, min: 0.33340000000000003, max: 0.5056499999999999
+wall clock time for iteration 78: 826.7253775596619s
+=== Generation 78 finished ===
+
+
+
+=== Generation 79 ===
+Mean reward: 0.45272666666666667, std: 0.031282787421981574, min: 0.33640000000000003, max: 0.494
+wall clock time for iteration 79: 833.9810395240784s
+=== Generation 79 finished ===
+
+
+
+=== Generation 80 ===
+Mean reward: 0.465155, std: 0.026218127793570602, min: 0.4053, max: 0.5319999999999999
+wall clock time for iteration 80: 837.3728005886078s
+=== Generation 80 finished ===
+
+
+
+=== Generation 81 ===
+Mean reward: 0.460535, std: 0.0383745252956524, min: 0.36450000000000005, max: 0.5386
+wall clock time for iteration 81: 843.9356660842896s
+=== Generation 81 finished ===
+
+
+
+=== Generation 82 ===
+Mean reward: 0.4599216666666666, std: 0.039309561354572364, min: 0.3696, max: 0.5481
+wall clock time for iteration 82: 834.7615909576416s
+=== Generation 82 finished ===
+
+
+
+=== Generation 83 ===
+Mean reward: 0.4640833333333333, std: 0.031544554029006154, min: 0.4045, max: 0.5215
+wall clock time for iteration 83: 842.0588748455048s
+=== Generation 83 finished ===
+
+
+
+=== Generation 84 ===
+Mean reward: 0.4724083333333333, std: 0.03378139054601248, min: 0.38699999999999996, max: 0.5397
+wall clock time for iteration 84: 878.5905590057373s
+=== Generation 84 finished ===
+
+
+
+=== Generation 85 ===
+Mean reward: 0.475645, std: 0.03127092192969905, min: 0.3908, max: 0.5255
+wall clock time for iteration 85: 843.0001790523529s
+=== Generation 85 finished ===
+
+
+
+=== Generation 86 ===
+Mean reward: 0.4723616666666666, std: 0.03101119605167712, min: 0.4045, max: 0.5355
+wall clock time for iteration 86: 833.7731437683105s
+=== Generation 86 finished ===
+
+
+
+=== Generation 87 ===
+Mean reward: 0.478595, std: 0.024815409695053043, min: 0.42710000000000004, max: 0.5159999999999999
+wall clock time for iteration 87: 850.1047236919403s
+=== Generation 87 finished ===
+
+
+
+=== Generation 88 ===
+Mean reward: 0.4779433333333333, std: 0.0518790480080564, min: 0.3124, max: 0.5598000000000001
+wall clock time for iteration 88: 835.5665400028229s
+=== Generation 88 finished ===
+
+
+
+=== Generation 89 ===
+Mean reward: 0.48961, std: 0.02517495249912765, min: 0.44349999999999995, max: 0.5509000000000001
+wall clock time for iteration 89: 844.1650919914246s
+=== Generation 89 finished ===
+
+
+
+=== Generation 90 ===
+Mean reward: 0.4878333333333334, std: 0.02778718929450923, min: 0.41965, max: 0.5408999999999999
+wall clock time for iteration 90: 841.2587819099426s
+=== Generation 90 finished ===
+
+
+
+=== Generation 91 ===
+Mean reward: 0.4915933333333334, std: 0.04391867243996439, min: 0.3492, max: 0.56455
+wall clock time for iteration 91: 831.244957447052s
+=== Generation 91 finished ===
+
+
+
+=== Generation 92 ===
+Mean reward: 0.50105, std: 0.036373477058611436, min: 0.36690000000000006, max: 0.5551
+wall clock time for iteration 92: 870.0230720043182s
+=== Generation 92 finished ===
+
+
+
+=== Generation 93 ===
+Mean reward: 0.4996, std: 0.030578889777099477, min: 0.40720000000000006, max: 0.5695999999999999
+wall clock time for iteration 93: 842.820473909378s
+=== Generation 93 finished ===
+
+
+
+=== Generation 94 ===
+Mean reward: 0.490535, std: 0.03692496027982515, min: 0.39380000000000004, max: 0.579
+wall clock time for iteration 94: 835.667017698288s
+=== Generation 94 finished ===
+
+
+
+=== Generation 95 ===
+Mean reward: 0.50658, std: 0.03125190820840651, min: 0.43510000000000004, max: 0.5470999999999999
+wall clock time for iteration 95: 836.4836008548737s
+=== Generation 95 finished ===
+
+
+
+=== Generation 96 ===
+Mean reward: 0.4995133333333334, std: 0.028798894461805682, min: 0.39849999999999997, max: 0.5508
+wall clock time for iteration 96: 836.8551485538483s
+=== Generation 96 finished ===
+
+
+
+=== Generation 97 ===
+Mean reward: 0.49519333333333326, std: 0.0366249612817391, min: 0.4031, max: 0.5540999999999999
+wall clock time for iteration 97: 830.2008261680603s
+=== Generation 97 finished ===
+
+
+
+=== Generation 98 ===
+Mean reward: 0.5082749999999999, std: 0.02331627739727478, min: 0.4561, max: 0.5557
+wall clock time for iteration 98: 842.2774362564087s
+=== Generation 98 finished ===
+
+
+
+=== Generation 99 ===
+Mean reward: 0.5081016666666668, std: 0.040458067764318914, min: 0.3625, max: 0.5793499999999999
+wall clock time for iteration 99: 844.1633796691895s
+=== Generation 99 finished ===
+
+Final model weights saved to /mnt/data/es-ft-experiment/countdown_nccl_20260215_155825/model_saves/final_model_iteration_100.

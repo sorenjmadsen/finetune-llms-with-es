@@ -12,11 +12,7 @@ def load_self_weights_from_disk(base_model_name_or_path: str, weights_path: str,
     # 2) Load your saved tensors
     sd = torch.load(weights_path, map_location="cpu")
 
-    # 3) Handle common DDP prefix just in case (your save code doesn't add it, but harmless)
-    if any(k.startswith("module.") for k in sd.keys()):
-        sd = {k.replace("module.", "", 1): v for k, v in sd.items()}
-
-    # 4) Load (strict=False prevents minor head/vocab mismatches from hard-crashing)
+    # 3) Load (strict=False prevents minor head/vocab mismatches from hard-crashing)
     missing, unexpected = model.load_state_dict(sd, strict=False)
 
     if missing:
